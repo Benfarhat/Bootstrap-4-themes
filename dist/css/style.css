@@ -1,0 +1,4 @@
+*:not(.rounded):not(.rounded-top):not(.rounded-bottom):not(.rounded-right):not(.rounded-left):not(.rounded-circle)
+{
+  border-radius: 0 !important;
+}
