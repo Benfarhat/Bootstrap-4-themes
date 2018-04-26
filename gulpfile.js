@@ -32,7 +32,7 @@ gulp.task('sass', function(){
   });
   /* Task: from css to min.css */
   gulp.task('minify', function () {
-    return gulp.src(destination + '/css/*.css')
+    return gulp.src(destination + '/css/*.css') // Should not be min.css
       .pipe(csso())
       .pipe(rename({
         suffix: '.min'
