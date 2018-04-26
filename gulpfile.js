@@ -1,35 +1,93 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
-var runSequence = require('run-sequence');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync').create();
+const runSequence = require('run-sequence');
 /* Gulp plugins */
-var csscomb = require('gulp-csscomb'); // Réodonner les propriété
-var cssbeautify = require('gulp-cssbeautify'); // Améliorer le code (formatage)
-var csso = require('gulp-csso'); // Minifier le code css
-var rename = require('gulp-rename'); // Renomme les fichiers
-var imagemin = require('gulp-imagemin'); // Optimisation des images
-var cache = require('gulp-cache'); // Evite la réoptimisation des images déjà otpimisées
+const csscomb = require('gulp-csscomb'); // Réodonner les propriété
+const cssbeautify = require('gulp-cssbeautify'); // Améliorer le code (formatage)
+const csso = require('gulp-csso'); // Minifier le code css
+const rename = require('gulp-rename'); // Renomme les fichiers
+const imagemin = require('gulp-imagemin'); // Optimisation des images
+const cache = require('gulp-cache'); // Evite la réoptimisation des images déjà otpimisées
 /* Options */
-var source = './src'; 
-var destination = './dist'; 
-var application = './app'; 
+const source = './src';
+const destination = './dist';
 
-/* Tasks */
+/* Tasks Dedicated to Bootstrap */
+
+/* Here we populate source folder */
+
+/* Task: Bootstrap style */
+gulp.task('bs-sass', function(){
+  return gulp.src(['./node_modules/bootstrap/scss/bootstrap.scss', source + '/scss/*.scss'])
+  .pipe(sass())
+  .pipe(csscomb())
+  .pipe(cssbeautify({
+      indent: '  ',
+      openbrace: 'separate-line',
+      autosemicolon: true
+  }))
+  .pipe(gulp.dest(source + '/css'))
+  .pipe(browserSync.stream());
+});
+/* Task: Bootstrap scripts */
+gulp.task('bs-js', function() {
+  return gulp.src(['./node_modules/bootstrap/dist/js/bootstrap.min.js', './node_modules/jquery/dist/jquery.min.js', './node_modules/popper.js/dist/umd/popper.min.js'])
+  .pipe(gulp.dest(source + '/js'))
+  .pipe(browserSync.stream());
+})
+
+/* Task: FontAwesome fonts*/
+gulp.task('fa-fonts', function() {
+  return gulp.src(['./node_modules/font-awesome/fonts/*'])
+  .pipe(gulp.dest(source + '/fonts'))
+  .pipe(browserSync.stream());
+})
+/* Task: FontAwesome style*/
+gulp.task('fa-css', function() {
+  return gulp.src(['./node_modules/font-awesome/css/font-awesome.min.css'])
+  .pipe(gulp.dest(source + '/css'))
+  .pipe(browserSync.stream());
+})
+
+/* Task: Serve and sass */
+gulp.task('serve', ['bs-sass'], function() {
+  browserSync.init({
+    server: {
+      baseDir: source
+    },
+  })
+
+  gulp.watch(source + '/scss/*.scss', ['bs-sass']);
+  gulp.watch(source + '/*.html').on('change', browserSync.reload);
+
+})
+
+gulp.task('default', ['bs-js', 'serve', 'fa-css', 'fa-fonts'])
+
+
+/* ============================================================= */
+
+
+/* Other tasks */
+
+
+/* Here we populate destination folder */
+
+
 /* Task: From scss to css */
 gulp.task('sass', function(){
-    return gulp.src(source + '/scss/style.scss')
-    .pipe(sass())
-    .pipe(csscomb())
-    .pipe(cssbeautify({
-        indent: '  ',
-        openbrace: 'separate-line',
-        autosemicolon: true
-    }))
-    .pipe(gulp.dest(destination + '/css'))
-    .pipe(browserSync.reload({
-        stream: true
-      }))
-  });
+  return gulp.src(source + '/scss/style.scss')
+  .pipe(sass())
+  .pipe(csscomb())
+  .pipe(cssbeautify({
+      indent: '  ',
+      openbrace: 'separate-line',
+      autosemicolon: true
+  }))
+  .pipe(gulp.dest(destination + '/css'))
+  .pipe(browserSync.stream());
+});
   /* Task: from css to min.css */
   gulp.task('minify', function () {
     return gulp.src(destination + '/css/*.css') // Should not be min.css
@@ -44,16 +102,16 @@ gulp.task('sass', function(){
   });
   /* Task: BrowserSync as webserver */
   gulp.task('browserSync', function() {
-    browserSync({
+    browserSync.init({
       server: {
-        baseDir: application
+        baseDir: destination
       },
     })
   })
   /* Task: Gulp watching source files */
   gulp.task('watch', ['browserSync', 'sass'], function (){
-    gulp.watch('**/*.scss', ['sass']);
-    gulp.watch('app/*.html', browserSync.reload); 
+    gulp.watch(source + 'scss/*.scss', ['sass']);
+    gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
   });
   /* Task: Copy all fonts */
