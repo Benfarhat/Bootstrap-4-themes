@@ -5,5 +5,17 @@
 
 body
 {
-  background-color: blue;
+  color: #fff;
+  background: #333;
+}
+
+.navbar
+{
+  opacity: .8;
+  border-bottom: 3px solid #008ed6;
+}
+
+#home-section
+{
+  background-image: url('../img/home.jpeg');
 }

@@ -63,7 +63,21 @@ gulp.task('serve', ['bs-sass'], function() {
 
 })
 
+
+gulp.task('serve-root', ['bs-sass'], function() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    },
+  })
+
+  gulp.watch(source + '/scss/*.scss', ['bs-sass']);
+  gulp.watch('./*.html').on('change', browserSync.reload);
+
+})
+
 gulp.task('default', ['bs-js', 'serve', 'fa-css', 'fa-fonts'])
+gulp.task('dev', ['bs-js', 'serve-root', 'fa-css', 'fa-fonts'])
 
 
 /* ============================================================= */
