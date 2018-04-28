@@ -17,5 +17,53 @@ body
 
 #home-section
 {
-  background-image: url('../img/home.jpeg');
+  min-height: 700px;
+  background: url('../img/home3.jpeg') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#home-section .home-inner
+{
+  padding-top: 150px;
+}
+
+#home-section .dark-overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+#home-section .card-form
+{
+  opacity: .8;
+}
+
+#home-section .fa
+{
+  font-size: 30px;
+  padding: 4px;
+  color: #008ed6;
+  background: #fff;
+}
+
+#explore-section .fa,
+#share-section .fa
+{
+  font-size: 30px;
+  padding: 4px;
+  color: #fff;
+  background: #333;
+}
+
+#create-section .fa
+{
+  font-size: 30px;
+  padding: 4px;
+  color: #fff;
+  background: #333;
 }
