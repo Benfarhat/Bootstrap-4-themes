@@ -30,6 +30,9 @@ gulp.task('bs-sass', function(){
   .pipe(gulp.dest(source + '/css'))
   .pipe(browserSync.stream());
 });
+
+
+
 /* Task: Bootstrap scripts */
 gulp.task('bs-js', function() {
   return gulp.src(['./node_modules/bootstrap/dist/js/bootstrap.min.js', './node_modules/jquery/dist/jquery.min.js', './node_modules/popper.js/dist/umd/popper.min.js'])
@@ -79,6 +82,38 @@ gulp.task('serve-root', ['bs-sass'], function() {
 gulp.task('default', ['bs-js', 'serve', 'fa-css', 'fa-fonts'])
 gulp.task('dev', ['bs-js', 'serve-root', 'fa-css', 'fa-fonts'])
 
+
+
+
+/* Task: Bootstrap style for second theme*/
+gulp.task('bs-sass2', function(){
+  return gulp.src([source + '/custom/scss/bootstrap2.scss', source + '/scss/*.scss'])
+  .pipe(sass())
+  .pipe(csscomb())
+  .pipe(cssbeautify({
+      indent: '  ',
+      openbrace: 'separate-line',
+      autosemicolon: true
+  }))
+  .pipe(gulp.dest(source + '/css'))
+  .pipe(browserSync.stream());
+});
+
+
+gulp.task('serve-root2', ['bs-sass2'], function() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    },
+  })
+
+  gulp.watch(source + '/scss/*.scss', ['bs-sass2']);
+  gulp.watch(source + '/custom/scss/*.scss', ['bs-sass2']);
+  gulp.watch('./*.html').on('change', browserSync.reload);
+
+})
+
+gulp.task('dev2', ['bs-js', 'serve-root2', 'fa-css', 'fa-fonts'])
 
 /* ============================================================= */
 

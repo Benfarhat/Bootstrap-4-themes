@@ -1,3 +1,67 @@
 *:not(.rounded):not(.rounded-top):not(.rounded-bottom):not(.rounded-right):not(.rounded-left):not(.rounded-circle){
   border-radius: 0 !important
 }
+
+$primary: #3292a6;
+$primary-overlay: rgba(50,146,166,0.8);
+
+body{
+  margin-top: 98px;
+}
+
+.navbar{
+  box-shadow: 2px 2px 5px $primary;
+  opacity: 0.9;
+  background: #fff;
+
+  .nav-item{
+    font-size:1.4rem;
+    padding-right:20px;
+  }
+}
+
+#showcase{
+  position:relative;
+  background: url('../img/people4.jpeg');
+  min-height:600px;
+  img{
+    max-height: 560px;
+    position:relative;
+    top:20px;
+    left:25%;
+  }
+
+  .primary-overlay{
+    background:$primary-overlay;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+}
+
+.info-header{
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+#authors{
+  img{
+    margin-top: -50px;
+    border:1px solid rgba(0,0,0,0.05)
+  }
+
+  .fa{
+    font-size:25px;
+  }
+
+  .card:hover{
+    background: $primary;
+    color:#fff;
+    .fa{
+      color:#fff;
+    }
+  }
+}
