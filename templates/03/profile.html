@@ -97,7 +97,7 @@
   <section id="profile">
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col-md-9">
           <div class="card">
             <div class="card-header">
               <h4><i class="fa fa-user"></i> Edit Profile</h4>
@@ -142,6 +142,12 @@
             </div>
           </div>
         </div>
+        <div class="col-md-3">
+          <h3>Your avatar</h3>
+          <img src="http://i.pravatar.cc/300?img=67" alt="Avatar" class="d-block img-fluid mb-3">
+          <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#imageModal">Edit Images</button>
+          <button class="btn btn-danger btn-block">Delete Images</button>
+        </div>
       </div>
     </div>
   </section>
@@ -160,42 +166,82 @@
 
   <!-- /Profile Edit -->
 
-<!-- Password Modal -->
+<!-- Image Modal -->
 
-<div class="modal fade" id="passwordModal">
+<div class="modal fade" id="imageModal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header bg-success text-white">
-          <h5 class="modal-title">Add User</h5>
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Edit Avatar</h5>
           <button class="close" data-dismiss="modal">
             <span>&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <form action="">
-            <div class="form-group">
-              <label for="password">Current Password</label>
-              <input type="password" name="password" class="form-control" placeholder="password">
-            </div>
-            <div class="form-group">
-              <label for="password">New Password</label>
-              <input type="password" name="password" class="form-control" placeholder="password">
-            </div>
-            <div class="form-group">
-              <label for="password">Confirm New Password</label>
-              <input type="password" name="confirmPassword" class="form-control" placeholder="confirm password">
-            </div>
+              <div class="form-group">
+                <label for="file">Avatar upload</label>
+                <input type="file" name="file" class="form-control">
+                <small class="form-text text-muted">Max Size 1mb</small>
+              </div>
+              <hr>
+              <div class="form-group">
+                <label for="url">Avatar URL</label>
+                <input type="url" name="url" class="form-control" placeholder="https://...">
+              </div>
           </form>
         </div>
         <div class="modal-footer">
             <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button class="btn btn-success" data-dismiss="modal">Save Changes</button>
+            <button class="btn btn-primary" data-dismiss="modal">Save Avatar</button>
           </div>
       </div>
     </div>
   </div>
 
-  <!-- /User Modal -->
+  <!-- /Image Modal -->
+
+
+  <!-- Password Modal -->
+
+  <div class="modal fade" id="passwordModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Edit User</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="password">
+              </div>
+              <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input type="password" name="confirmPassword" class="form-control" placeholder="confirm password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button class="btn btn-success" data-dismiss="modal">Save Changes</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- /Password Modal -->
 
 
   <script src="../../src/js/jquery.min.js"></script>
