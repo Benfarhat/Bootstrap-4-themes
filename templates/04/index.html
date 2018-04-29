@@ -45,30 +45,38 @@
 
     <div class="carousel-inner">
       <div class="carousel-item carousel-image-1 active">
-        <div class="container">
-          <div class="carousel-caption d-none d-sm-block text-white mb-5">
-            <h1 class="display-3">Heading One</h1>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, delectus. Quam magnam rerum suscipit veniam corrupti harum dolorem culpa doloremque.</p>
-            <a href="#" class="btn btn-danger btn-lg">Sign Up Now</a>
+        <div class="container-fluid">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block text-white mb-5">
+              <h1 class="display-3">Heading One</h1>
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, delectus. Quam magnam rerum suscipit veniam corrupti harum dolorem culpa doloremque.</p>
+              <a href="#" class="btn btn-danger btn-lg">Sign Up Now</a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="carousel-item carousel-image-2">
-        <div class="container">
-          <div class="carousel-caption d-none d-sm-block text-white mb-5">
-            <h1 class="display-3">Heading Two</h1>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, delectus. Quam magnam rerum suscipit veniam corrupti harum dolorem culpa doloremque.</p>
-            <a href="#" class="btn btn-primary btn-lg">Learn More</a>
+        <div class="container-fluid">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block text-white mb-5">
+              <h1 class="display-3">Heading Two</h1>
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, delectus. Quam magnam rerum suscipit veniam corrupti harum dolorem culpa doloremque.</p>
+              <a href="#" class="btn btn-primary btn-lg">Learn More</a>
+            </div>
           </div>
         </div>
       </div>
+
+
       <div class="carousel-item carousel-image-3">
-        <div class="container">
-          <div class="carousel-caption d-none d-sm-block text-white mb-5">
-            <h1 class="display-3">Heading One</h1>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, delectus. Quam magnam rerum suscipit veniam corrupti harum dolorem culpa doloremque.</p>
-            <a href="#" class="btn btn-success btn-lg">Learn More</a>
+        <div class="container-fluid">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block text-white mb-5">
+              <h1 class="display-3">Heading One</h1>
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, delectus. Quam magnam rerum suscipit veniam corrupti harum dolorem culpa doloremque.</p>
+              <a href="#" class="btn btn-success btn-lg">Learn More</a>
+            </div>
           </div>
         </div>
       </div>
@@ -117,9 +125,102 @@
 
 <!-- /Home icon section -->
 
+
+<!-- Home heading section -->
+
+<section id="home-heading" class="p-5">
+  <div class="dark-overlay">
+    <div class="row">
+      <div class="col">
+        <div class="container pt-5">
+          <h1>Are you ready to get started</h1>
+          <p class="d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat veritatis reiciendis in inventore libero praesentium tempora, totam alias obcaecati!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /Home heading section -->
+
+<!-- Info section -->
+
+<secion id="info" class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 align-self-center">
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque deleniti iure explicabo, itaque obcaecati iusto fuga officiis libero rem cumque?</p>
+        <a href="#" class="btn btn-outline-danger btn-lg">Learn More</a>
+      </div>
+      <div class="col-md-6">
+        <img src="../../src/img/laptop.png" alt="" class="img-fluid mt-3">
+      </div>
+    </div>
+  </div>
+</secion>
+
+<!-- /Info section -->
+
+<!-- Video play section -->
+
+<section id="video-play">
+  <div class="dark-overlay">
+    <div class="row">
+      <div class="col">
+        <div class="container p-5">
+          <a
+          href="#"
+          class="video"
+          data-video="https://www.youtube.com/embed/coU6OmISOBM"
+          data-toggle="modal"
+          data-target="#videoModal">
+            <i class="fa fa-play"></i>
+          </a>
+          <h1>See What We Do</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /Video play section -->
+
+
+<!-- Video Modal -->
+
+<div class="modal fade" id="videoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <iframe height="350" width="100%" src="https://www.youtube.com/embed/coU6OmISOBM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /Video Modal -->
+
   <script src="../../src/js/jquery.min.js"></script>
   <script src="../../src/js/popper.min.js"></script>
   <script src="../../src/js/bootstrap.min.js"></script>
+  <script>
+$(function() {
+  // Auto play modal video
+  $(".video").click(function () {
+    var theModal = $(this).data("target"),
+    videoSRC = $(this).attr("data-video"),
+    videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&mute=1&autoplay=1";
+    $(theModal + ' iframe').attr('src', videoSRCauto);
+    $(theModal + ' button.close').click(function () {
+      $(theModal + ' iframe').attr('src', videoSRC);
+    });
+  });
+});
+  </script>
 </body>
 
 </html>

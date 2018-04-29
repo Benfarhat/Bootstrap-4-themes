@@ -1,4 +1,14 @@
 $icon-size:54px;
+$dark-overlay: rgba(0,0,0,0.7);
+$dark-overlay2: rgba(0,0,0,0.5);
+
+body{
+  overflow-x: hidden;
+}
+
+*:not(.rounded):not(.rounded-top):not(.rounded-bottom):not(.rounded-right):not(.rounded-left):not(.rounded-circle){
+  border-radius: 0 !important
+}
 
 .navbar{
   .nav-link{
@@ -12,6 +22,9 @@ $icon-size:54px;
   }
 }
 .carousel{
+  position:relative;
+  min-height:200px;
+
   .carousel-item{
     height: 450px;
   }
@@ -30,8 +43,59 @@ $icon-size:54px;
     background: url('../img/people3.jpeg');
     background-size: cover;
   }
+
+  .container-fluid{
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: $dark-overlay2;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .fa{
   font-size: $icon-size;
+}
+
+#home-heading{
+  position:relative;
+  min-height:200px;
+  background: url('../img/people4.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  text-align:center;
+  color:#fff;
+
+  .dark-overlay{
+    position:absolute;
+    background-color: $dark-overlay;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+}
+
+#video-play{
+  position:relative;
+  min-height:200px;
+  background: url('../img/people5.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 0 -300px;
+  text-align:center;
+  color:#fff;
+  a{
+    color:#fff;
+  }
+
+  .dark-overlay{
+    position:absolute;
+    background-color: $dark-overlay;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
 }
