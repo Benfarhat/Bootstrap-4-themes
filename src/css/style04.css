@@ -1,0 +1,35 @@
+.navbar .nav-link
+{
+  font-size: 14px;
+  padding-right: 1em !important;
+  padding-left: 1em !important;
+  text-transform: uppercase;
+}
+
+.navbar .nav-item.active
+{
+  border-left: #444 3px solid;
+}
+
+.carousel .carousel-item
+{
+  height: 450px;
+}
+
+.carousel .carousel-image-1
+{
+  background: url('../img/people1.jpeg');
+  background-size: cover;
+}
+
+.carousel .carousel-image-2
+{
+  background: url('../img/people2.jpeg');
+  background-size: cover;
+}
+
+.carousel .carousel-image-3
+{
+  background: url('../img/people3.jpeg');
+  background-size: cover;
+}
