@@ -1,3 +1,5 @@
+$icon-size:54px;
+
 .navbar{
   .nav-link{
     font-size:14px;
@@ -9,7 +11,7 @@
     border-left:#444 3px solid;
   }
 }
-  .carousel{
+.carousel{
   .carousel-item{
     height: 450px;
   }
@@ -28,4 +30,8 @@
     background: url('../img/people3.jpeg');
     background-size: cover;
   }
+}
+
+.fa{
+  font-size: $icon-size;
 }
