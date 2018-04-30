@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../../src/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../src/css/bootstrap.css">
   <link rel="stylesheet" href="../../src/css/style04.css">
+  <!-- Ekko Lightbox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
 </head>
 
 <body id="home">
@@ -211,49 +213,50 @@
 
     <div class="row mb-4">
       <div class="col md-4">
-        <a href="http://lorempixel.com/560/560/business/1" data-toggle="lightbox" data-gallery="img-gallery">
-          <img src="http://lorempixel.com/400/400/business/1" alt="" class="img-fluid">
+        <a href="http://i.pravatar.cc/500?img=11" data-toggle="lightbox" data-gallery="img-gallery">
+          <img src="http://i.pravatar.cc/250?img=11" alt="" class="img-fluid">
         </a>
       </div>
       <div class="col md-4">
-        <a href="http://lorempixel.com/560/560/business/2" data-toggle="lightbox" data-gallery="img-gallery">
-          <img src="http://lorempixel.com/400/400/business/2" alt="" class="img-fluid">
+        <a href="http://i.pravatar.cc/500?img=12" data-toggle="lightbox" data-gallery="img-gallery">
+          <img src="http://i.pravatar.cc/250?img=12" alt="" class="img-fluid">
         </a>
       </div>
       <div class="col md-4">
-        <a href="http://lorempixel.com/560/560/business/3" data-toggle="lightbox" data-gallery="img-gallery">
-          <img src="http://lorempixel.com/400/400/business/3" alt="" class="img-fluid">
+        <a href="http://i.pravatar.cc/500?img=13" data-toggle="lightbox" data-gallery="img-gallery">
+          <img src="http://i.pravatar.cc/250?img=13" alt="" class="img-fluid">
         </a>
       </div>
       <div class="col md-4">
-        <a href="http://lorempixel.com/560/560/business/4" data-toggle="lightbox" data-gallery="img-gallery">
-          <img src="http://lorempixel.com/400/400/business/4" alt="" class="img-fluid">
+        <a href="http://i.pravatar.cc/500?img=14" data-toggle="lightbox" data-gallery="img-gallery">
+          <img src="http://i.pravatar.cc/250?img=14" alt="" class="img-fluid">
         </a>
       </div>
     </div>
 
     <div class="row mb-4">
       <div class="col md-4">
-        <a href="http://lorempixel.com/560/560/business/5" data-toggle="lightbox" data-gallery="img-gallery">
-          <img src="http://lorempixel.com/400/400/business/5" alt="" class="img-fluid">
+        <a href="http://i.pravatar.cc/500?img=25" data-toggle="lightbox" data-gallery="img-gallery">
+          <img src="http://i.pravatar.cc/250?img=25" alt="" class="img-fluid">
         </a>
       </div>
       <div class="col md-4">
-        <a href="http://lorempixel.com/560/560/business/6" data-toggle="lightbox" data-gallery="img-gallery">
-          <img src="http://lorempixel.com/400/400/business/6" alt="" class="img-fluid">
+        <a href="http://i.pravatar.cc/500?img=16" data-toggle="lightbox" data-gallery="img-gallery">
+          <img src="http://i.pravatar.cc/250?img=16" alt="" class="img-fluid">
         </a>
       </div>
       <div class="col md-4">
-        <a href="http://lorempixel.com/560/560/business/7" data-toggle="lightbox" data-gallery="img-gallery">
-          <img src="http://lorempixel.com/400/400/business/7" alt="" class="img-fluid">
+        <a href="http://i.pravatar.cc/500?img=17" data-toggle="lightbox" data-gallery="img-gallery">
+          <img src="http://i.pravatar.cc/250?img=17" alt="" class="img-fluid">
         </a>
       </div>
       <div class="col md-4">
-        <a href="http://lorempixel.com/560/560/business/8" data-toggle="lightbox" data-gallery="img-gallery">
-          <img src="http://lorempixel.com/400/400/business/8" alt="" class="img-fluid">
+        <a href="http://i.pravatar.cc/500?img=18" data-toggle="lightbox" data-gallery="img-gallery">
+          <img src="http://i.pravatar.cc/250?img=18" alt="" class="img-fluid">
         </a>
       </div>
     </div>
+
 
   </div>
 </section>
@@ -265,6 +268,8 @@
   <script src="../../src/js/jquery.min.js"></script>
   <script src="../../src/js/popper.min.js"></script>
   <script src="../../src/js/bootstrap.min.js"></script>
+  <!-- Lightbox script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
   <script>
 $(function() {
   // Auto play modal video
@@ -278,6 +283,11 @@ $(function() {
     });
   });
 });
+// @see: http://ashleydw.github.io/lightbox/
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
   </script>
 </body>
 
