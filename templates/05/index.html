@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bootsrap 4 starter</title>
+  <link rel="stylesheet" href="../../src/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../src/css/bootstrap2.css">
+  <link rel="stylesheet" href="../../src/css/style05.css">
+</head>
+<body id="home">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-light">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">Beautiful clone</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <navbar id="navNavbar" class="collapse navbar-collapse">
+          <ul id="top-menu" class="navbar-nav mr-auto container-fluid">
+            <li class="nav-item active"><a href="#" class="nav-link">Africa</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Asia</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">America</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Antartica</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Europe</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Australia</a></li>
+          </ul>
+        </navbar>
+        <navbar id="navNavbar" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto container-fluid">
+            <li class="nav-item text-mute"><a id="searchLink" href="#" class="nav-link" data-toggle="modal" data-target="#searchModal">Search WhiteHouse.clone <img src="https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/img/search.png" alt=""></a></li>
+
+          </ul>
+        </navbar>
+      </div>
+    </nav>
+  <!-- /Navbar -->
+
+
+  <section id="content">
+
+    <!-- A la Une -->
+
+    <div id="alaune" class="container">
+      <div class="row">
+        <div class="dark-overlay d-flex align-items-end">
+          <!-- Beautiful quote from Misty Copeland - @see: https://www.brainyquote.com/quotes/misty_copeland_749724?src=t_beautiful -->
+          <a href="#">Be strong, be fearless, be beautiful. And believe that anything is possible when you have the right people there to support you.</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- A la Une -->
+
+  </section>
+
+  <!-- Search Fullscreen Modal -->
+
+  <div class="modal fade" id="searchModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header text-white">
+            <h5 class="modal-title">Beautiful clone</h5>
+            <button class="close text-white" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="form-group">
+                <label for="search">Title</label>
+                <input type="text" name="title" class="form-control" placeholder="Type Your Search...">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-secondary btn-block" data-dismiss="modal">Search</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- /Search Fullscreen Modal -->
+
+
+  <script src="../../src/js/jquery.min.js"></script>
+  <script src="../../src/js/popper.min.js"></script>
+  <script src="../../src/js/bootstrap.min.js"></script>
+</body>
+</html>
