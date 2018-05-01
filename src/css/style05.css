@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes|Merriweather|Source+Sans+Pro');
 
+*:not(.rounded):not(.rounded-top):not(.rounded-bottom):not(.rounded-right):not(.rounded-left):not(.rounded-circle)
+{
+  border-radius: 2px !important;
+}
+
 body
 {
   font-family: 'Source Sans Pro', sans-serif;
@@ -379,4 +384,141 @@ nav.navbar #navNavbar .fa
 {
   color: #fff;
   background-color: #293340;
+}
+
+.bg-transparent
+{
+  background-color: transparent;
+}
+
+.card.third .card-title,
+.card.third .card-text
+{
+  text-align: left;
+}
+
+.card.third .card-body
+{
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #333;
+}
+
+.card.third img
+{
+  -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+footer
+{
+  position: relative;
+  padding-top: 0;
+  text-align: center;
+}
+
+footer i.fa
+{
+  margin-right: 8px;
+  margin-left: 8px;
+  color: #a98860;
+}
+
+footer .brand
+{
+  font-family: 'Great Vibes', cursivex;
+  font-size: 2.1em;
+}
+
+footer .star
+{
+  position: relative;
+}
+
+footer .star span.divider
+{
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  border-bottom: 1px solid #fff;
+}
+
+footer a
+{
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+footer a:hover
+{
+  color: #fff;
+}
+
+footer #signup
+{
+  position: relative;
+  top: -100px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 4px;
+  background-color: #a98860;
+}
+
+footer #signup form
+{
+  width: 100%;
+  padding: 36px 48px;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+footer #signup form label
+{
+  font-family: 'Merriweather', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+footer #signup form input[type='text']
+{
+  padding: 18px;
+  border: 1px solid #fff;
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .16);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, .16);
+}
+
+footer #signup form input[type='submit']
+{
+  padding: 18px;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: #a98860;
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .16);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, .16);
+}
+
+section#bottomPix
+{
+  position: relative;
+  min-height: 400px;
+  margin-top: 48px;
+  text-align: center;
+  background-image: url('../img/nature1.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 -300px;
+}
+
+section#bottomPix .gradient-overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(255, 0, 0, 0), #ebebed);
 }
