@@ -7,7 +7,9 @@ $white: #ffffff;
 $dark-overlay: rgba(0,0,0,0.1);
 $bg-body:#ebebed;
 
-
+*:not(.rounded):not(.rounded-top):not(.rounded-bottom):not(.rounded-right):not(.rounded-left):not(.rounded-circle){
+  border-radius: 2px !important
+}
 
 body{
   color: #293340;
@@ -265,4 +267,8 @@ nav.navbar {
 .bg-blue{
   background-color: $blue-dark;
   color:$white;
+}
+
+.bg-transparent{
+  background-color: transparent;
 }
