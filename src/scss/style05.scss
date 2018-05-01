@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes|Merriweather|Source+Sans+Pro');
 
 $brown: #a98860;
+$blue: #455d7c;
+$blue-dark:#293340;
+$white: #ffffff;
 $dark-overlay: rgba(0,0,0,0.1);
 $bg-body:#ebebed;
 
@@ -109,7 +112,6 @@ nav.navbar {
     font-size:3em;
     text-align: center;
     outline: none;
-
     font-family: 'Merriweather', serif;
   }
 
@@ -169,3 +171,98 @@ nav.navbar {
   }
 }
 
+.news {
+  .card {
+    .img-limit-250 {
+    max-height: 250px;
+    overflow:hidden;
+    }
+    .img-limit-200 {
+    max-height: 200px;
+    overflow:hidden;
+    }
+    .img-limit-150 {
+    max-height: 150px;
+    overflow:hidden;
+    }
+    .img-limit-auto {
+    max-height: auto;
+    overflow-x:visible;
+    }
+
+    .card-title{
+      color: $blue;
+      letter-spacing: .05em;
+      font-size: 0.75rem;
+      line-height: 1.5em;
+      text-align: center;
+      font-weight: 700;
+      text-transform: uppercase;
+
+    }
+    .card-title::before {
+
+      height: 0;
+      width: 20px;
+      border-top: 2px solid #e20020;
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+
+  }
+  .card-text{
+    text-align: center;
+    font-size:1.75rem;
+    font-family: 'Merriweather', serif;
+    font-weight:700;
+  }
+
+  }
+
+  .card.tweet{
+
+    .card-title{
+      color: $white;
+      letter-spacing: auto;
+      font-size: 1rem;
+      line-height: 2.5em;
+      text-align: left;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom:2.5em;
+      .fa{
+        font-size:1.75em;
+        color:#46b8ff;
+      }
+    }
+    .card-title::before {
+
+      display:none;
+
+  }
+
+    .card-text{
+      text-align: left;
+      font-size:1rem;
+      font-family: 'Merriweather', serif;
+      font-weight:400;
+      line-height:2em;
+    }
+
+  }
+}
+
+@for $i from 1 through 20 {
+  $width: 5 * $i;
+  $unit: '% !important';
+
+  .w-#{$width} {
+    width: $width#{$unit};
+  }
+}
+
+.bg-blue{
+  background-color: $blue-dark;
+  color:$white;
+}
