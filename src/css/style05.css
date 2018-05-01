@@ -7,6 +7,13 @@ body
   background-color: #ebebed;
 }
 
+input[type=text]:focus,
+textarea:focus
+{
+  border: none;
+  box-shadow: none !important;
+}
+
 nav.navbar .navbar-brand
 {
   font-family: 'Great Vibes', cursivex;
@@ -60,7 +67,8 @@ nav.navbar #navNavbar .fa
 #content #alaune a:hover
 {
   font-family: 'Merriweather', serif;
-  font-size: 2.5em;
+  font-size: 2em;
+  padding: 16px;
   text-align: center;
   text-decoration: none;
   color: #fff;
@@ -133,4 +141,50 @@ nav.navbar #navNavbar .fa
 .modal-backdrop.show
 {
   opacity: 1;
+}
+
+#formBarContainer
+{
+  position: relative;
+  min-height: 150px;
+}
+
+#formBarContainer form#formBar
+{
+  width: 100%;
+}
+
+#formBarContainer form#formBar input
+{
+  font-weight: 700;
+  position: relative;
+  z-index: 20;
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  background: #fff url('../img/search.png') 98% 50% no-repeat;
+  -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .16);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, .16);
+}
+
+#formBarContainer form#formBar input::placeholder
+{
+  opacity: 1;
+  color: #4b73a1;
+}
+
+#formBarContainer form#formBar input:focus,
+#formBarContainer form#formBar textarea:focus
+{
+  box-shadow: none;
+}
+
+#formBarContainer hr
+{
+  position: absolute;
+  z-index: 10;
+  top: 20%;
+  width: 100%;
+  border-bottom: 2px solid #d5d7db;
 }

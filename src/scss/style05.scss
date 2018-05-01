@@ -2,15 +2,20 @@
 
 $brown: #a98860;
 $dark-overlay: rgba(0,0,0,0.1);
+$bg-body:#ebebed;
 
 
 
 body{
   color: #293340;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color:#ebebed;
+  background-color:$bg-body
 }
 
+input[type=text]:focus, textarea:focus {
+  box-shadow: none !important;
+  border: none;
+}
 
 nav.navbar {
   .navbar-brand{
@@ -63,7 +68,8 @@ nav.navbar {
       text-decoration: none;
       text-align: center;
       flex-basis:1;
-      font-size:2.5em;
+      font-size:2em;
+      padding:16px;
       text-shadow: 0 2px 4px rgba(0,0,0,.25);
       font-family: 'Merriweather', serif;
     }
@@ -125,5 +131,41 @@ nav.navbar {
 }
 .modal-backdrop.show {
   opacity: 1;
+}
+
+#formBarContainer{
+  position: relative;
+  min-height:150px;
+
+  form#formBar{
+    width: 100%;
+    input{
+      position:relative;
+      text-align:center;
+      width:50%;
+      margin:0 auto;
+      padding:30px;
+      -webkit-box-shadow: 0 2px 7px rgba(0,0,0,.16);
+      box-shadow: 0 2px 7px rgba(0,0,0,.16);
+      z-index:20;
+      font-weight: 700;
+      background:#fff url('../img/search.png') 98% 50% no-repeat;
+    }
+    input::placeholder {
+      color: #4b73a1;
+      opacity: 1;
+    }
+    input:focus, textarea:focus {
+      box-shadow: none;
+    }
+
+  }
+  hr{
+    position:absolute;
+    top:20%;
+    border-bottom: 2px solid #d5d7db;
+    width:100%;
+    z-index:10;
+  }
 }
 
