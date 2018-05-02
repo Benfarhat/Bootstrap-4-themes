@@ -1,5 +1,18 @@
 body
 {
+  font-size: .9em;
+  content: '|';
+  color: #707070;
+}
+
+body a
+{
+  color: #707070;
+}
+
+body a:hover
+{
+  text-decoration: underline;
   color: #707070;
 }
 
@@ -7,6 +20,7 @@ body
 {
   font-size: .7em;
   line-height: .9em;
+  margin-bottom: 0;
   text-align: center;
   color: #fff;
   background-color: #212121;
@@ -28,6 +42,7 @@ body
   font-weight: normal;
   position: relative;
   float: inherit;
+  text-transform: uppercase;
   opacity: 1;
   text-shadow: none;
 }
@@ -67,10 +82,45 @@ body
   color: #6c757d;
 }
 
+#firstMenu a.social i.fa
+{
+  line-height: 2em;
+  position: relative;
+  top: -.25em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  border-radius: 50%;
+}
+
+#firstMenu a.social i.fa.fa-facebook
+{
+  color: #3b5999;
+  border: 1.8px solid #3b5999;
+}
+
+#firstMenu a.social i.fa.fa-twitter
+{
+  color: #a5ceec;
+  border: 1.8px solid #a5ceec;
+}
+
+#firstMenu a.social i.fa.fa-instagram
+{
+  color: #1875ae;
+  border: 1.8px solid #1875ae;
+}
+
+#firstMenu a.social i.fa.fa-vine
+{
+  color: #43c19a;
+  border: 1.8px solid #43c19a;
+}
+
 #navNavbar
 {
   position: relative;
-  padding-bottom: 16px;
+  padding-bottom: 32px;
 }
 
 #navNavbar .logo
@@ -84,14 +134,28 @@ body
   position: absolute;
   right: 0;
   bottom: 0;
+  min-width: 220px;
+  padding: 4px 4px;
+  color: #333;
+  border: 1px solid #f3f3f3;
+  border-radius: 6px;
+  background-color: #f3f3f3;
 }
 
 #navNavbar .search-top input
 {
-  padding: 4px 16px;
-  color: #333;
   border: 1px solid #f3f3f3;
-  border-radius: 6px;
+  background-color: #f3f3f3;
+  flex-grow: 1;
+}
+
+#navNavbar .search-top button
+{
+  padding-right: 2px;
+  cursor: pointer;
+  color: #787878;
+  border: 1px solid #f3f3f3;
+  border-left: 1px solid rgba(0, 0, 0, .2);
   background-color: #f3f3f3;
 }
 
@@ -100,4 +164,61 @@ body
   min-height: 800px;
   margin-top: 6px;
   background-color: #f3f3f3;
+}
+
+#content #topmenu ul
+{
+  margin-top: 8px;
+}
+
+#content #topmenu ul > li
+{
+  padding-right: 4px;
+  padding-left: 8px;
+}
+
+#content #topmenu ul > li::before
+{
+  display: inline;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  content: '|';
+  color: #bbb;
+}
+
+#content #topmenu ul > li:last-child::after
+{
+  display: inline;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  content: '|';
+  color: #bbb;
+}
+
+#content #topmenu a
+{
+  display: inline;
+  text-transform: uppercase;
+  color: #707070;
+}
+
+#content #topmenu a:hover
+{
+  text-decoration: underline;
+}
+
+#content hr.black-line
+{
+  margin-top: 8px;
+  border-bottom: 2px solid #555;
+}
+
+#content-left .card p
+{
+  margin-bottom: 4px;
+}
+
+#content-left .card div.info
+{
+  border-bottom: 2px solid #bbb;
 }

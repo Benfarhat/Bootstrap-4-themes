@@ -1,9 +1,21 @@
 $white: #ffffff;
 $blue: #0b6ba8;
 $grey: #f3f3f3;
+$grey2: #707070;
+$grey3: #bbb;
 
 body{
   color:#707070;
+  font-size:0.9em;
+  content: "|";
+
+    a{
+      color:$grey2;
+    }
+    a:hover{
+      color:$grey2;
+      text-decoration: underline
+    }
 }
 #cookie.alert-dark{
     background-color: #212121;
@@ -12,6 +24,7 @@ body{
     font-size: 0.7em;
     text-align:center;
     line-height:0.9em;
+    margin-bottom:0;
   .btn-blue{
     background-color: $blue;
     color: $white;
@@ -27,6 +40,7 @@ body{
     text-shadow: none;
     opacity:1;
     font-weight:normal;
+    text-transform: uppercase;
   }
 }
 
@@ -52,11 +66,36 @@ body{
     content: "-";
     margin-left:2px;;
   }
+  a.social i.fa{
+    position:relative;
+    top:-0.25em;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  $colors: (
+    facebook: #3B5999,
+    twitter: #A5CEEC,
+    instagram: #1875AE,
+    vine: #43C19A
+  );
+
+  @each $element, $value in $colors {
+    a.social i.fa.fa-#{$element}{
+      border: 1.8px solid $value;
+      color: $value;
+    }
+  }
+
+
 }
 
 #navNavbar{
   position:relative;
-  padding-bottom: 16px;
+  padding-bottom: 32px;
   .logo{
     position: relative;
     margin: 0 auto;
@@ -65,12 +104,24 @@ body{
     position:absolute;
     bottom:0;
     right:0;
+    border: 1px solid $grey;
+    background-color: $grey;
+    color:#333;
+    border-radius: 6px;
+    padding:4px 4px;
+    min-width:220px;
     input{
-      border: 1px solid $grey;
+      flex-grow: 1;
       background-color: $grey;
-      color:#333;
-      border-radius: 6px;
-      padding:4px 16px;
+      border: 1px solid $grey
+    }
+    button{
+      background-color: $grey;
+      border: 1px solid $grey;
+      border-left: 1px solid rgba(0,0,0,.2);
+      padding-right:2px;
+      cursor: pointer;
+      color:#787878;
     }
   }
 }
@@ -78,4 +129,53 @@ body{
   background-color: $grey;
   min-height:800px;
   margin-top:6px;
+
+  #topmenu{
+    ul{
+      margin-top:8px;
+    }
+    ul>li{
+      padding-left:8px;
+      padding-right:4px;
+    }
+    ul>li::before {
+      display: inline;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      color: $grey3;
+      content: "|";
+    }
+    ul>li:last-child::after {
+      display: inline;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      color: $grey3;
+      content: "|";
+    }
+    a{
+      text-transform: uppercase;
+      display:inline;
+      color:$grey2;
+    }
+    a:hover{
+      text-decoration: underline
+    }
+  }
+
+  hr.black-line{
+    border-bottom: 2px solid #555;
+    margin-top:8px;
+  }
+}
+
+#content-left{
+  .card{
+
+    p{
+      margin-bottom:4px;
+    }
+    div.info{
+      border-bottom: 2px solid $grey3;
+    }
+  }
 }
