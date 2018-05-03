@@ -159,9 +159,21 @@ body a:hover
   background-color: #f3f3f3;
 }
 
+.bg-grey
+{
+  margin-top: 6px;
+  background-color: #f3f3f3;
+}
+
+.bg-brown
+{
+  margin-top: 6px;
+  background-color: #dbd6d6;
+}
+
 #content
 {
-  min-height: 800px;
+  min-height: 200px;
   margin-top: 6px;
   background-color: #f3f3f3;
 }
@@ -213,12 +225,158 @@ body a:hover
   border-bottom: 2px solid #555;
 }
 
-#content-left .card p
+#content-left .card ul li,
+#content-center .card ul li,
+#content-right .card ul li
+{
+  position: relative;
+}
+
+#content-left .card .bg-primary:hover::before,
+#content-center .card .bg-primary:hover::before,
+#content-right .card .bg-primary:hover::before
+{
+  position: absolute;
+  top: -1em;
+  left: 8px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: .255em;
+  content: '';
+  vertical-align: .255em;
+  color: #3292a6;
+  border-top: 0;
+  border-right: 1.5em solid transparent;
+  border-bottom: 1.2em solid;
+  border-left: .6em solid transparent;
+}
+
+#content-left .card p,
+#content-center .card p,
+#content-right .card p
 {
   margin-bottom: 4px;
 }
 
-#content-left .card div.info
+#content-left .card div.info,
+#content-center .card div.info,
+#content-right .card div.info
 {
   border-bottom: 2px solid #bbb;
+}
+
+#content-left .card li.picture,
+#content-center .card li.picture,
+#content-right .card li.picture
+{
+  overflow: hidden;
+}
+
+#content-left .card li.picture img,
+#content-center .card li.picture img,
+#content-right .card li.picture img
+{
+  width: 100%;
+  transition: transform .5s;
+}
+
+#content-left .card li.picture img:hover,
+#content-center .card li.picture img:hover,
+#content-right .card li.picture img:hover
+{
+  transform: scale(1.2);
+}
+
+#content-left .card a.social i.fa,
+#content-center .card a.social i.fa,
+#content-right .card a.social i.fa
+{
+  line-height: 1.6em;
+  position: relative;
+  top: -.15em;
+  width: 1.6em;
+  height: 1.6em;
+  text-align: center;
+  border-radius: 50%;
+}
+
+#content-left .card a.social i.fa.fa-facebook,
+#content-center .card a.social i.fa.fa-facebook,
+#content-right .card a.social i.fa.fa-facebook
+{
+  color: #3b5999;
+  border: 1.8px solid #3b5999;
+}
+
+#content-left .card a.social i.fa.fa-twitter,
+#content-center .card a.social i.fa.fa-twitter,
+#content-right .card a.social i.fa.fa-twitter
+{
+  color: #a5ceec;
+  border: 1.8px solid #a5ceec;
+}
+
+#content-left .card a.social i.fa.fa-instagram,
+#content-center .card a.social i.fa.fa-instagram,
+#content-right .card a.social i.fa.fa-instagram
+{
+  color: #1875ae;
+  border: 1.8px solid #1875ae;
+}
+
+#content-left .card a.social i.fa.fa-vine,
+#content-center .card a.social i.fa.fa-vine,
+#content-right .card a.social i.fa.fa-vine
+{
+  color: #43c19a;
+  border: 1.8px solid #43c19a;
+}
+
+footer
+{
+  font-size: .9em;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+footer div[class^='col-'].linetop
+{
+  padding-top: 1.5em;
+  border-top: 1px solid rgba(0, 0, 0, .2);
+}
+
+footer a.social i.fa
+{
+  line-height: 2.2em;
+  position: relative;
+  top: -.3em;
+  width: 2.2em;
+  height: 2.2em;
+  text-align: center;
+  border-radius: 50%;
+}
+
+footer a.social i.fa.fa-facebook
+{
+  color: #3b5999;
+  border: 2px solid #3b5999;
+}
+
+footer a.social i.fa.fa-twitter
+{
+  color: #a5ceec;
+  border: 2px solid #a5ceec;
+}
+
+footer a.social i.fa.fa-instagram
+{
+  color: #1875ae;
+  border: 2px solid #1875ae;
+}
+
+footer a.social i.fa.fa-vine
+{
+  color: #43c19a;
+  border: 2px solid #43c19a;
 }
