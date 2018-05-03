@@ -6,6 +6,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+
   .overlay {
     position: relative;
     width: 100%;
@@ -14,6 +15,7 @@ body {
     left: 0;
     background-color: $dark-overlay;
     padding-top: 40px;
+    padding-bottom:200px;
   }
 
 }
@@ -39,7 +41,7 @@ body.night {
 
 
       .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(0, 0, 0, 0.2);
       }
 
       }
@@ -67,7 +69,8 @@ header {
       .nav-link {
         color: black;
         text-align: center;
-        padding: 8px 24px;
+        padding: 8px 32px;
+
         i.fa {
           display: block;
           font-size: 1.2em;
@@ -95,10 +98,17 @@ header {
   }
 }
 
+main{
+  position: relative;
+  margin-bottom: 86px;
+  .carousel-item{
+    min-height:400px;
+  }
+
+}
 
 
-
-footer {
+footer#footer {
   font-size:0.85em;
   position: fixed;
   right: 0;
