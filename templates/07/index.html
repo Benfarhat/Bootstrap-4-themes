@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="../../src/css/bootstrap2.css">
   <link rel="stylesheet" href="../../src/css/style07.css">
 </head>
-<body id="home">
+<body id="home" class="night">
     <div class="overlay">
         <header>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand d-flex flex-row pr-5" href="#"><div class="navbar-brand-left pr-2"><img class="logo" src="../../src/img/logo-lion.png" alt="logo"></div><div class="navbar-brand-left"><h2 class="m-0 font-weight-bold font-italic">Hi all, Here we go!</h2><span>Officcial website of love</span></div></a>
+                            <a class="navbar-brand d-flex flex-row pr-5" href="#"><div class="navbar-brand-left pr-2"><img class="logo" src="../../src/img/lion-white.svg" alt="logo"></div><div class="navbar-brand-left"><h2 class="m-0 font-weight-bold font-italic">Hi all, Here we go!</h2><span>Officcial website of love</span></div></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
@@ -36,12 +36,92 @@
 
 
 
+        <footer>
+    <nav class="navbar fixed-bottom navbar-expand-sm pt-0 pb-0">
+      <div class="container">
+        <div class="stretch">
 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-bug"></i>Nature</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-bed"></i>Camping</a>
+                  </li>
+                  <li class="nav-item dropup">
+                    <a class="nav-link dropdown-toggle" href="https://getbootstrap.com" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gear"></i>Ideas </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown10">
+                      <a class="dropdown-item" href="#">Be smart</a>
+                      <a class="dropdown-item" href="#">Be stronger</a>
+                      <a class="dropdown-item" href="#">Be faster</a>
+                      <a class="dropdown-item" href="#">Never Give Up</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target="#moreInformation"><i class="fa fa-plus"></i>More</a>
+                  </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active d-flex flex-row">
+                      <span>
+                        <span id="localTime">00:00:00</span>
+                        <div class="text-uppercase">local time</div>
+                      </span>
+                      <span class="display-5 pl-2"><i class="fa fa-calendar"></i></span>
+                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Help Chat Online</a>
+                  </li>
+                </ul>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+
+              </nav>
+
+              <div class="collapse" id="moreInformation">
+                  <div class="card card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                  </div>
+                </div>
+
+
+        </footer>
 
     </div>
 
   <script src="../../src/js/jquery.min.js"></script>
   <script src="../../src/js/popper.min.js"></script>
   <script src="../../src/js/bootstrap.min.js"></script>
+  <script>
+  function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('localTime').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+  }
+  function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+  }
+  </script>
 </body>
 </html>

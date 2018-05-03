@@ -6,13 +6,7 @@ body
   background-size: cover;
 }
 
-body,
-html
-{
-  height: 100%;
-}
-
-.overlay
+body .overlay
 {
   position: relative;
   top: 0;
@@ -21,6 +15,52 @@ html
   height: 100%;
   padding-top: 40px;
   background-color: rgba(0, 0, 0, .1);
+}
+
+body.night
+{
+  color: rgba(255, 255, 255, .9);
+  background-image: url('../img/night1.jpeg');
+}
+
+body.night .overlay
+{
+  background-color: rgba(0, 0, 0, .1);
+}
+
+body.night .navbar-light .navbar-nav .show > .nav-link,
+body.night .navbar-light .navbar-nav .active > .nav-link,
+body.night .navbar-light .navbar-nav .nav-link.show,
+body.night .navbar-light .navbar-nav .nav-link.active,
+body.night .navbar-light .navbar-brand
+{
+  color: rgba(255, 255, 255, .9);
+}
+
+body.night header .navbar .navbar-nav .nav-link
+{
+  color: rgba(255, 255, 255, .9);
+}
+
+body.night header .navbar .navbar-nav .nav-link i.fa
+{
+  color: rgba(255, 255, 255, .9);
+}
+
+body.night header .navbar .navbar-nav .nav-link:hover
+{
+  background-color: rgba(255, 255, 255, .2);
+}
+
+body,
+html
+{
+  height: 100%;
+}
+
+.stretch
+{
+  flex-grow: 1;
 }
 
 header .navbar .flex-grow
@@ -61,5 +101,82 @@ header .navbar-brand img.logo
 
 header .navbar-brand h2
 {
-  font-family: Times,'Times New Roman',serif;
+  font-family: Times, 'Times New Roman', serif;
+}
+
+footer
+{
+  font-size: .85em;
+}
+
+footer .fixed-bottom
+{
+  position: fixed;
+  z-index: 1030;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+footer ul > li
+{
+  padding: 16px 24px;
+  text-align: center;
+  border-left: 1px solid rgba(255, 255, 255, .2);
+}
+
+footer ul > li:last-child
+{
+  border-right: 1px solid rgba(255, 255, 255, .2);
+}
+
+footer ul > li:hover
+{
+  color: #fff;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+footer .nav-link
+{
+  display: inline-block;
+}
+
+footer a
+{
+  color: rgba(255, 255, 255, .9);
+}
+
+footer a i.fa
+{
+  display: block;
+}
+
+footer a:hover
+{
+  color: rgba(255, 255, 255, .9);
+}
+
+footer .dropdown-item
+{
+  color: rgba(255, 255, 255, .9);
+}
+
+footer .dropdown-menu
+{
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+footer .dropdown-item:hover,
+footer .dropdown-item:focus
+{
+  text-decoration: none;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.display-5
+{
+  font-size: 2em;
 }
