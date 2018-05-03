@@ -1,0 +1,56 @@
+$dark-overlay: rgba(0, 0, 0, .1);
+body{
+    background-image: url('../img/plage.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+body, html{
+    height:100%;
+}
+.overlay{
+    position:relative;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color: $dark-overlay;
+    padding-top:40px;
+}
+header{
+    .navbar{
+        .flex-grow{
+            flex-grow: 1;
+        }
+        .navbar-nav{
+            .nav-link{
+                color:black;
+                text-align: center;
+                padding:8px 24px;
+                i.fa{
+                    display:block;
+                    font-size:1.2em;
+                    color: #888;
+                }
+            }
+            .nav-link:hover{
+                background-color: rgba(0,0,0,.2)
+            }
+        }
+    }
+    a{
+        font-size:1.2em;
+        color: rgba(0,0,0,.8);
+        text-shadow: 0 1px 0 rgba(255,255,255,.5) !important;
+    }
+    
+    .navbar-brand{
+        img.logo{
+            height:70px;
+        }
+        h2{
+            font-family: Times,'Times New Roman',serif;
+        }
+    }
+
+}
