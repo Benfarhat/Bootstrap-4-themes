@@ -12,6 +12,7 @@ const cache = require('gulp-cache'); // Evite la réoptimisation des images déj
 /* Options */
 const source = './src';
 const destination = './dist';
+const devpath = './templates';
 
 /* Tasks Dedicated to Bootstrap */
 
@@ -109,7 +110,7 @@ gulp.task('serve-root2', ['bs-sass2'], function() {
 
   gulp.watch(source + '/scss/*.scss', ['bs-sass2']);
   gulp.watch(source + '/custom/scss/*.scss', ['bs-sass2']);
-  gulp.watch('*.html').on('change', browserSync.reload);
+  gulp.watch(devpath + '/**/*').on('change', browserSync.reload);
 
 })
 
