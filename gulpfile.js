@@ -110,7 +110,7 @@ gulp.task('serve-root2', ['bs-sass2'], function() {
 
   gulp.watch(source + '/scss/*.scss', ['bs-sass2']);
   gulp.watch(source + '/custom/scss/*.scss', ['bs-sass2']);
-  gulp.watch(devpath + '/**/*').on('change', browserSync.reload);
+  gulp.watch('./**/*.html').on('change', browserSync.reload);
 
 })
 

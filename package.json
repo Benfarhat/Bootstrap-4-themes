@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "dev":"gulp dev"
+    "dev":"gulp dev",
+    "dev2":"gulp dev2"
   },
   "keywords": [],
   "author": "",
