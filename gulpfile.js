@@ -12,7 +12,6 @@ const cache = require('gulp-cache'); // Evite la réoptimisation des images déj
 /* Options */
 const source = './src';
 const destination = './dist';
-const devpath = './templates';
 
 /* Tasks Dedicated to Bootstrap */
 
