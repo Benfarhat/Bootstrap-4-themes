@@ -254,6 +254,32 @@ li
   padding: .9rem 1rem;
 }
 
+.tiret
+{
+  font-size: 1rem;
+  font-weight: 300;
+  display: inline-block;
+  margin: 15px auto 0;
+  padding: 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #fff;
+}
+
+.tiret:after
+{
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  margin-top: 9px;
+  content: '';
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  background: #1e1719;
+}
+
 /* Carousel */
 #carousel .carousel-indicators
 {
