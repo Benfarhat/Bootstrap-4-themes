@@ -1,3 +1,410 @@
+/* For debuggin a div just add "debug" class */
+.debug{
+  position:relative;
+}
+.debug:after{
+  position:absolute;
+  content:'';
+  display:block;
+  top:0;
+  left:0;
+  min-width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,.4);
+  border:1px dashed red;
+}
+
+/* General */
+
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Lato|Roboto');
+
+.archivo{
+  font-family: 'Archivo Narrow', sans-serif !important;
+}
+
+.roboto{
+  font-family: 'Roboto', sans-serif !important;
+}
+.lato{
+  font-family: 'Lato', sans-serif !important;
+}
+
+/* Font size */
+@for $i from 16 through 20{
+  .font#{5*$i}{
+    font-size: 5em * $i / 100
+  }
+}
+
+/* Placeholder italic*/
+
+::-webkit-input-placeholder{
+  font-style: italic;
+}
+
+::-moz-placeholder{
+  font-style: italic;
+}
+
+:-ms-input-placeholder{
+  font-style: italic;
+}
+
+input:-moz-placeholder{
+  font-style: italic;
+}
+
+/* Little fixs */
+
+nav .flex-nowrap{
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+  li{
+    white-space: nowrap;
+  }
+}
+
+a, li{
+  outline: none;
+}
+a.nav-link{
+
+}
+
+.bg-danger{
+  a{
+    color:var(--white);
+    -webkit-transition: color .2s, background-color .2s; /* Safari */
+    transition: color .2s, background-color .2s;
+    position:relative;
+
+
+
+    &:not(.active):hover{
+      background-color:var(--white);
+      color:var(--red);
+    }
+    &.active:hover{
+
+      background-color:var(--white);
+      color:var(--red);
+    }
+
+    &.active:hover::after{
+
+      border-top-color: transparent;
+    }
+
+  }
+
+  a.active::after {
+
+    display: inline-block;
+    position:absolute;
+    bottom:-5px;
+    left:50%;
+    width: 0;
+    height: 0;
+
+    content: '';
+    vertical-align: .255em;
+    border-top: .5em solid var(--red);
+    border-right: .5em solid transparent;
+    border-bottom: 0;
+    border-left: .5em solid transparent;
+
+
+}
+
+
+
+
+}
+/* Header */
+
+.flex-grow{
+  flex-grow:1;
+}
+
+#header{
+  min-height:220px;
+  background-image: url('../../src/img/city8.jpeg');
+  background-size: cover;
+  background-position: center;
+  .container-fluid .row {
+    min-height: 220px;
+  }
+  .overlay{
+    i.fa{
+      display:block;
+    }
+
+    form{
+      input, button{
+        background-color:#fff;
+        border:none;
+      }
+      input{
+        padding: 4px 8px 0;
+      }
+    }
+  }
+}
+
+.divide{
+
+
+  .nav-item:not(.nolink):not(:last-child)::after{
+    content: "|";
+    color: var(--red);
+    padding: .5rem 0;
+
+
+  }
+
+  .nav-item{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    a.nav-link,
+    .active a.nav-link{
+      display:inline-block;
+      color: var(--red);
+      font-size:1em;
+
+      &:hover{
+
+
+        text-decoration: underline;
+        text-decoration-color: var(--dark);
+
+      }
+
+      &:focus{
+
+        color: var(--red);
+
+      }
+
+    }
+
+    &.active{
+      a.nav-link{
+        color: var(--red);
+        text-decoration: underline;
+        text-decoration-color: var(--red);
+      }
+    }
+
+
+
+}
+}
+
+.overlay{
+  background-color: rgba(0,0,0,.55);
+  position:relative;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+
+.rotate{
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+  position: relative;
+  display:block;
+  top:5px;
+  left: 75px;
+
+}
+
+/* Nav link */
+.nav-item.nolink,
+.nav-item .nav-link{
+  padding: .9rem 1rem;
+}
+
+
+
+
+
+/* Carousel */
+
+#carousel{
+  .carousel-indicators{
+    left:auto;
+    margin-left:auto;
+    margin-right:auto;
+    cursor: pointer;
+    li{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      border:1px solid var(--red);
+      background-color: transparent;
+    }
+    li.active{
+      background-color:var(--red);
+    }
+  }
+
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    opacity:1;
+    color: var(--red);
+    width:auto;
+  }
+    .carousel-control-next-icon{
+      color: var(--red);
+    }
+  .carousel-control-prev {
+    left: -32px;
+
+  }
+  .carousel-control-next {
+    right: -32px;
+  }
+
+
+
+  .carousel-item{
+    max-height: 250px;
+    overflow:hidden;
+    img{
+      max-width:50%;
+      width:50%;
+      min-height:250px;
+
+    }
+    .carousel-caption{
+      width:50%;
+      height:100%;
+      top:0;
+      left:50%;
+      right: auto;
+      bottom:bottom;
+      text-align:justify;
+      color:var(--dark);
+      padding: 8px 16px;
+
+      a.btn.readmore{
+        color:var(--red);
+      }
+      a.btn.readmore:hover{
+        color:var(--white);
+        background-color:var(--red);
+      }
+    }
+  }
+}
+
+.bd-title{
+  border-left: solid 2px var(--red);
+  padding-left: 6px;
+  margin: 0 0 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+.navbar-light{
+  .navbar-brand{
+    font-size:0.9em;
+    color: var(--dark);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @each $theme in danger, info, success, warning {
+
+    .navbar-nav.theme-#{$theme}{
+
+      .nav-item{
+        a.nav-link,
+        .active a.nav-link{
+          display:inline-block;
+          color: var(--#{$theme});
+          line-height:1.2em;
+          outline: none;
+          outline-width: 0;
+          padding:0;
+          margin:6px;
+          font-size:0.9em;
+
+          &:hover{
+
+            color: var(--#{$theme});
+            border-bottom:1px solid var(--dark);
+
+          }
+
+          &:focus{
+
+            color: var(--#{$theme});
+
+          }
+
+        }
+
+        &.active{
+          a.nav-link{
+            color: var(--#{$theme});
+            border-bottom:1px solid var(--#{$theme});
+          }
+        }
+
+        &::after{
+          content: "|";
+          color: var(--#{$theme});
+
+
+        }
+
+      }
+
+    }
+  }
+
+
+}
+
+
+
 .fixedToBottom {
   font-size:0.95em;
   position: fixed;
@@ -6,3 +413,4 @@
   left: 0;
   z-index: 1050;
 }
+
