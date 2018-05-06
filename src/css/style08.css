@@ -99,6 +99,40 @@ a.hoverred:hover *
 a.hoverred:hover
 {
   text-decoration: none;
+  color: var(--red);
+}
+
+a.hoverblue:hover *
+{
+  color: var(--blue);
+}
+
+a.hoverblue:hover
+{
+  text-decoration: none;
+  color: var(--blue);
+}
+
+a.hovergreen:hover *
+{
+  color: var(--green);
+}
+
+a.hovergreen:hover
+{
+  text-decoration: none;
+  color: var(--green);
+}
+
+a.hoveroranger:hover *
+{
+  color: var(--orange);
+}
+
+a.hovergreen:hover
+{
+  text-decoration: none;
+  color: var(--orange);
 }
 
 /* Font */

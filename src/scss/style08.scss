@@ -83,6 +83,30 @@ a.hoverred:hover *{
   color:var(--red);
 }
 a.hoverred:hover{
+  color:var(--red);
+  text-decoration: none;
+}
+
+a.hoverblue:hover *{
+  color:var(--blue);
+}
+a.hoverblue:hover{
+  color:var(--blue);
+  text-decoration: none;
+}
+
+a.hovergreen:hover *{
+  color:var(--green);
+}
+a.hovergreen:hover{
+  color:var(--green);
+  text-decoration: none;
+}
+a.hoveroranger:hover *{
+  color:var(--orange);
+}
+a.hovergreen:hover{
+  color:var(--orange);
   text-decoration: none;
 }
 
