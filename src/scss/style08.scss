@@ -16,6 +16,76 @@
 
 /* General */
 
+/* Button */
+
+a.btn.readmore{
+  color:var(--red);
+  transition:color 0.25s ease;
+  position:relative;
+}
+a.btn.readmore:hover{
+  color:var(--white);
+  /*background-color:var(--red);*/
+}
+
+a.btn.readmore::after {
+  position: absolute;
+  content: '';
+  top:0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--red);
+  transform-origin:left;
+  transition:width 0.25s ease;
+  z-index:-1;
+}
+
+a.btn.readmore:hover::after {
+  width: 100%;
+}
+
+/* For menu */
+.bg-danger a.nav-link:not(.dropdown-toggle),
+.bg-danger a.dropdown-item{
+  color:var(--white);
+  transition:color 0.25s ease;
+  position:relative;
+}
+.bg-danger a.nav-link:not(.dropdown-toggle):hover,
+.bg-danger a.dropdown-item:hover{
+  color:var(--red);
+  background-color:inherit;
+}
+
+.bg-danger a.nav-link:not(.dropdown-toggle)::after,
+.bg-danger a.dropdown-item::after {
+  position: absolute;
+  content: '';
+  top:0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--white);
+  transform-origin:right;
+  transition:width 0.25s ease;
+  z-index:-1;
+}
+
+.bg-danger a.nav-link:not(.dropdown-toggle):hover::after,
+.bg-danger a.dropdown-item:hover::after {
+  width: 100%;
+}
+
+
+/* special hover for gallery */
+a.hoverred:hover *{
+  color:var(--red);
+}
+a.hoverred:hover{
+  text-decoration: none;
+}
+
 /* Font */
 @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Lato|Roboto');
 
@@ -98,6 +168,8 @@ a.nav-link{
 
   }
 
+  /*
+  The code can't work with left to right background transition
   a.active::after {
 
     display: inline-block;
@@ -117,7 +189,7 @@ a.nav-link{
 
 }
 
-
+*/
 
 
 }
@@ -257,6 +329,12 @@ a.nav-link{
 
 #alaune{
 
+  a .picture {
+    height: 140px;
+    widows: 100%;
+    overflow:hidden;
+  }
+
   img{
     width: 100%;
     min-height:140px;
@@ -269,7 +347,9 @@ a.nav-link{
 
 #carousel{
   .carousel-indicators{
-    left:auto;
+    left:51%;
+    right:auto;
+    bottom:-13px;
     margin-left:auto;
     margin-right:auto;
     cursor: pointer;
@@ -325,13 +405,7 @@ a.nav-link{
       color:var(--dark);
       padding: 8px 16px;
 
-      a.btn.readmore{
-        color:var(--red);
-      }
-      a.btn.readmore:hover{
-        color:var(--white);
-        background-color:var(--red);
-      }
+
     }
   }
 }
