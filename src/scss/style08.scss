@@ -45,6 +45,27 @@ a.btn.readmore:hover::after {
   width: 100%;
 }
 
+
+/* Menu danger
+background-transition with linear-gradient
+and background-position */
+
+a.btn.readmore-danger{
+  color:var(--white);
+  transition:color 0.25s ease;
+  position:relative;
+  transition:all 0.5s ease 0s;
+  transition:all 1s ease;
+  background: linear-gradient(to left, transparent 50%, white 50%, transparent 100%);
+  background-size: 240% 100%;
+  background-position:right bottom;
+}
+a.btn.readmore-danger:hover{
+  color:var(--red);
+
+  background-position:left bottom;
+}
+
 /* For menu */
 .bg-danger a.nav-link:not(.dropdown-toggle),
 .bg-danger a.dropdown-item{
@@ -443,94 +464,44 @@ a.nav-link{
 }
 
 
-
-
-
-
-
-
-
-
-
-.navbar-light{
-  .navbar-brand{
-    font-size:0.9em;
+.middle-left{
+  background-color:#e2e2e2;
+  & nav a{
     color: var(--dark);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  @each $theme in danger, info, success, warning {
-
-    .navbar-nav.theme-#{$theme}{
-
-      .nav-item{
-        a.nav-link,
-        .active a.nav-link{
-          display:inline-block;
-          color: var(--#{$theme});
-          line-height:1.2em;
-          outline: none;
-          outline-width: 0;
-          padding:0;
-          margin:6px;
-          font-size:0.9em;
-
-          &:hover{
-
-            color: var(--#{$theme});
-            border-bottom:1px solid var(--dark);
-
-          }
-
-          &:focus{
-
-            color: var(--#{$theme});
-
-          }
-
-        }
-
-        &.active{
-          a.nav-link{
-            color: var(--#{$theme});
-            border-bottom:1px solid var(--#{$theme});
-          }
-        }
-
-        &::after{
-          content: "|";
-          color: var(--#{$theme});
-
-
-        }
-
-      }
-
+    & i.fa{
+      display:block
     }
   }
 
-
 }
+.middle-right{
+  background: url('../img/explore.jpg');
+  background-size: cover;
+  position:relative;
+  & .content{
+    .bd-title{
+      border-color: var(--white);
+    }
+    .card{
+      color: var(--dark);
+    }
+  }
+}
+
+.middle-right .overlay{
+  content: "";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  /*
+  background: var(--red);
+  opacity:0.7;*/
+  background-color: rgba(220, 53, 69, .7);
+}
+
+
 
 
 
