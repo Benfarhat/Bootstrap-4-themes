@@ -243,19 +243,27 @@ a.nav-link{
   &:after{
 
     content: "";
-    width: 100%;
+    width: 90%;
     height: 1px;
     position: absolute;
     background: #1e1719;
     margin-top: 9px;
-    left: 0;
+    left: 5%;
     z-index: -1;
     transition: 0.3s all;
     -webkit-transition: 0.3s all;
   }
 }
 
+#alaune{
 
+  img{
+    width: 100%;
+    min-height:140px;
+    max-height:140px;
+
+  }
+}
 
 /* Carousel */
 

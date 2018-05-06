@@ -270,14 +270,21 @@ li
 {
   position: absolute;
   z-index: -1;
-  left: 0;
-  width: 100%;
+  left: 5%;
+  width: 90%;
   height: 1px;
   margin-top: 9px;
   content: '';
   -webkit-transition: .3s all;
   transition: .3s all;
   background: #1e1719;
+}
+
+#alaune img
+{
+  width: 100%;
+  min-height: 140px;
+  max-height: 140px;
 }
 
 /* Carousel */
