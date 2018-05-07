@@ -65,6 +65,71 @@ a.btn.readmore-danger:hover{
   background-position:-2px bottom;
 }
 
+
+a.btn.readmore-info{
+  color:var(--white);
+  transition:color 0.25s ease;
+  position:relative;
+  transition:all 0.5s ease 0s;
+  transition:all 1s ease;
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
+  background-size: 240% 100%;
+  background-position:right bottom;
+}
+a.btn.readmore-info:hover{
+  color:var(--info);
+  background-position:-2px bottom;
+}
+
+a.btn.readmore-success{
+  color:var(--white);
+  transition:color 0.25s ease;
+  position:relative;
+  transition:all 0.5s ease 0s;
+  transition:all 1s ease;
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
+  background-size: 240% 100%;
+  background-position:right bottom;
+}
+a.btn.readmore-
+
+:hover{
+  color:var(--success);
+  background-position:-2px bottom;
+}
+
+
+a.btn.readmore-warning{
+  color:var(--white);
+  transition:color 0.25s ease;
+  position:relative;
+  transition:all 0.5s ease 0s;
+  transition:all 1s ease;
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
+  background-size: 240% 100%;
+  background-position:right bottom;
+}
+a.btn.readmore-warning:hover{
+  color:var(--warning);
+  background-position:-2px bottom;
+}
+
+
+a.btn.readmore-primary{
+  color:var(--white);
+  transition:color 0.25s ease;
+  position:relative;
+  transition:all 0.5s ease 0s;
+  transition:all 1s ease;
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
+  background-size: 240% 100%;
+  background-position:right bottom;
+}
+a.btn.readmore-primary:hover{
+  color:var(--primary);
+  background-position:-2px bottom;
+}
+
 /* For menu */
 .bg-danger a.nav-link:not(.dropdown-toggle),
 .bg-danger a.dropdown-item{
@@ -94,6 +159,40 @@ a.btn.readmore-danger:hover{
 
 .bg-danger a.nav-link:not(.dropdown-toggle):hover::after,
 .bg-danger a.dropdown-item:hover::after {
+  width: 100%;
+}
+
+
+/* bg dark menu */
+
+
+.bg-dark a.nav-link:not(.dropdown-toggle),
+.bg-dark a.dropdown-item{
+  color:var(--white);
+  transition:color 0.25s ease;
+  position:relative;
+}
+.bg-dark a.nav-link:not(.dropdown-toggle):hover,
+.bg-dark a.dropdown-item:hover{
+  text-decoration: underline;
+}
+
+.bg-dark a.nav-link:not(.dropdown-toggle)::after,
+.bg-dark a.dropdown-item::after {
+  position: absolute;
+  content: '';
+  top:0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--white);
+  transform-origin:right;
+  transition:width 0.25s ease;
+  z-index:-1;
+}
+
+.bg-dark a.nav-link:not(.dropdown-toggle):hover::after,
+.bg-dark a.dropdown-item:hover::after {
   width: 100%;
 }
 
@@ -371,7 +470,28 @@ a.nav-link{
   }
 }
 
-#alaune{
+.bg-danger .tiret{
+  background: var(--danger);
+}
+
+.bg-info .tiret{
+  background: var(--info);
+}
+
+.bg-success .tiret{
+  background: var(--success);
+}
+
+.bg-primary .tiret{
+  background: var(--primary);
+}
+
+.bg-warning .tiret{
+  background: var(--warning);
+}
+
+
+#alaune, #footer-green{
 
   a .picture {
     height: 140px;
@@ -387,7 +507,7 @@ a.nav-link{
   }
 }
 
-/* Carousel */
+/* Carousel top */
 
 #carousel{
   .carousel-indicators{
@@ -454,6 +574,84 @@ a.nav-link{
   }
 }
 
+/* Carousel bottom */
+
+#carousel2 {
+  margin-top:40px;
+  margin-bottom: 40px;
+  .carousel-indicators{
+    width:100%;
+    right:auto;
+    bottom:-42px;
+    margin-left:auto;
+    margin-right:auto;
+    cursor: pointer;
+    li{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      border:1px solid var(--white);
+      background-color: transparent;
+    }
+    li.active{
+      background-color:var(--white);
+    }
+  }
+
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    opacity:1;
+    color: var(--red);
+    width:auto;
+    top:-105px;
+    position:absolute;
+  }
+    .carousel-control-next-icon{
+      color: var(--red);
+    }
+  .carousel-control-prev {
+    left: -32px;
+
+  }
+  .carousel-control-next {
+    right: -32px;
+  }
+
+
+
+  .carousel-item{
+    max-height: 250px;
+    overflow:hidden;
+    img{
+      max-width:100%;
+      width:100%;
+      min-height:140px;
+      border:3.5px solid var(--white);
+
+    }
+
+  }
+}
+
+
+/* encoche */
+
+#footer-green{
+  position: relative;
+  margin-top:48px;
+  margin-bottom:32px;
+  border-bottom: 1px solid var(--dark);
+  .encoche{
+    position:absolute;
+    top:-18px;
+    left:calc(50% - 18px);
+    width:36px;
+    height:36px;
+    background-color:var(--white);
+    transform: rotate(45deg);
+  }
+}
 .bd-title{
   border-left: solid 2px var(--red);
   padding-left: 6px;
@@ -507,15 +705,65 @@ a.nav-link{
 }
 
 
+/* Other */
+
+
+#other{
+
+  a .picture {
+    height: 140px;
+    widows: 100%;
+    overflow:hidden;
+    position:relative;
+    .overlay{
+      position:absolute;
+      background: rgba(0,0,0,.05);
+      padding:16px;
+      transition: background 0.5s;
+
+      h1, h2, h3, h4, h5, h6{
+        text-transform: uppercase;
+        color: var(--white);
+        border:1px solid var(--white);
+        text-align:center;
+        height:100%;
+        span{
+          text-align: center;
+          width:100%;
+        }
+      }
+
+
+    }
+     .overlay:hover{
+        background: rgba(0,0,0,.4);
+      }
+  }
+
+  img{
+    width: 100%;
+    min-height:140px;
+    max-height:140px;
+
+  }
+}
 
 
 
-.fixedToBottom {
-  font-size:0.95em;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
+
+footer{
+  position: relative;
+  .img-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:url('../img/city1.jpeg');
+    background-size:cover;
+    background-attachment: fixed;
+    background-position-y: center;
+    opacity:0.1;
+  }
 }
 

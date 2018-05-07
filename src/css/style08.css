@@ -74,6 +74,79 @@ a.btn.readmore-danger:hover
   background-position: -2px bottom;
 }
 
+a.btn.readmore-info
+{
+  position: relative;
+  transition: color .25s ease;
+  transition: all .5s ease 0s;
+  transition: all 1s ease;
+  color: var(--white);
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
+  background-position: right bottom;
+  background-size: 240% 100%;
+}
+
+a.btn.readmore-info:hover
+{
+  color: var(--info);
+  background-position: -2px bottom;
+}
+
+a.btn.readmore-success
+{
+  position: relative;
+  transition: color .25s ease;
+  transition: all .5s ease 0s;
+  transition: all 1s ease;
+  color: var(--white);
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
+  background-position: right bottom;
+  background-size: 240% 100%;
+}
+
+a.btn.readmore-
+:hover
+{
+  color: var(--success);
+  background-position: -2px bottom;
+}
+
+a.btn.readmore-warning
+{
+  position: relative;
+  transition: color .25s ease;
+  transition: all .5s ease 0s;
+  transition: all 1s ease;
+  color: var(--white);
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
+  background-position: right bottom;
+  background-size: 240% 100%;
+}
+
+a.btn.readmore-warning:hover
+{
+  color: var(--warning);
+  background-position: -2px bottom;
+}
+
+a.btn.readmore-primary
+{
+  position: relative;
+  transition: color .25s ease;
+  transition: all .5s ease 0s;
+  transition: all 1s ease;
+  color: var(--white);
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
+  background-position: right bottom;
+  background-size: 240% 100%;
+}
+
+a.btn.readmore-primary:hover
+{
+  color: var(--primary);
+  background-position: -2px bottom;
+}
+
 /* For menu */
 .bg-danger a.nav-link:not(.dropdown-toggle),
 .bg-danger a.dropdown-item
@@ -107,6 +180,42 @@ a.btn.readmore-danger:hover
 
 .bg-danger a.nav-link:not(.dropdown-toggle):hover::after,
 .bg-danger a.dropdown-item:hover::after
+{
+  width: 100%;
+}
+
+/* bg dark menu */
+.bg-dark a.nav-link:not(.dropdown-toggle),
+.bg-dark a.dropdown-item
+{
+  position: relative;
+  transition: color .25s ease;
+  color: var(--white);
+}
+
+.bg-dark a.nav-link:not(.dropdown-toggle):hover,
+.bg-dark a.dropdown-item:hover
+{
+  text-decoration: underline;
+}
+
+.bg-dark a.nav-link:not(.dropdown-toggle)::after,
+.bg-dark a.dropdown-item::after
+{
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  content: '';
+  transition: width .25s ease;
+  transform-origin: right;
+  background-color: var(--white);
+}
+
+.bg-dark a.nav-link:not(.dropdown-toggle):hover::after,
+.bg-dark a.dropdown-item:hover::after
 {
   width: 100%;
 }
@@ -435,7 +544,33 @@ li
     background: #1e1719;
 }
 
-#alaune a .picture
+.bg-danger .tiret
+{
+    background: var(--danger);
+}
+
+.bg-info .tiret
+{
+    background: var(--info);
+}
+
+.bg-success .tiret
+{
+    background: var(--success);
+}
+
+.bg-primary .tiret
+{
+    background: var(--primary);
+}
+
+.bg-warning .tiret
+{
+    background: var(--warning);
+}
+
+#alaune a .picture,
+#footer-green a .picture
 {
     overflow: hidden; 
 
@@ -444,14 +579,15 @@ li
     widows: 100%;
 }
 
-#alaune img
+#alaune img,
+#footer-green img
 {
     width: 100%;
     min-height: 140px;
     max-height: 140px;
 }
 
-/* Carousel */
+/* Carousel top */
 #carousel .carousel-indicators
 {
     right: auto;
@@ -529,6 +665,98 @@ li
     color: var(--dark);
 }
 
+/* Carousel bottom */
+#carousel2
+{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#carousel2 .carousel-indicators
+{
+    right: auto;
+    bottom: -42px;
+
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    cursor: pointer;
+}
+#carousel2 .carousel-indicators li
+{
+    width: 10px;
+    height: 10px;
+
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    background-color: transparent;
+}
+#carousel2 .carousel-indicators li.active
+{
+    background-color: var(--white);
+}
+#carousel2 .carousel-control-prev,
+#carousel2 .carousel-control-next
+{
+    position: absolute; 
+    top: -105px;
+
+    width: auto;
+
+    opacity: 1;
+    color: var(--red);
+}
+#carousel2 .carousel-control-next-icon
+{
+    color: var(--red);
+}
+#carousel2 .carousel-control-prev
+{
+    left: -32px;
+}
+#carousel2 .carousel-control-next
+{
+    right: -32px;
+}
+#carousel2 .carousel-item
+{
+    overflow: hidden; 
+
+    max-height: 250px;
+}
+#carousel2 .carousel-item img
+{
+    width: 100%;
+    max-width: 100%;
+    min-height: 140px;
+
+    border: 3.5px solid var(--white);
+}
+
+/* encoche */
+#footer-green
+{
+    position: relative;
+
+    margin-top: 48px;
+    margin-bottom: 32px;
+
+    border-bottom: 1px solid var(--dark);
+}
+#footer-green .encoche
+{
+    position: absolute;
+    top: -18px;
+    left: calc(50% - 18px);
+
+    width: 36px;
+    height: 36px;
+
+    transform: rotate(45deg); 
+
+    background-color: var(--white);
+}
+
 .bd-title
 {
     font-weight: 600;
@@ -595,13 +823,81 @@ li
     background-color: rgba(220, 53, 69, .7);
 }
 
-.fixedToBottom
+/* Other */
+#other a .picture
 {
-    font-size: .95em;
+    position: relative; 
 
-    position: fixed;
-    z-index: 1050; 
-    right: 0;
-    bottom: 0;
+    overflow: hidden;
+
+    height: 140px;
+
+    widows: 100%;
+}
+#other a .picture .overlay
+{
+    position: absolute;
+
+    padding: 16px;
+
+    transition: background .5s; 
+
+    background: rgba(0, 0, 0, .05);
+}
+#other a .picture .overlay h1,
+#other a .picture .overlay h2,
+#other a .picture .overlay h3,
+#other a .picture .overlay h4,
+#other a .picture .overlay h5,
+#other a .picture .overlay h6
+{
+    height: 100%; 
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+#other a .picture .overlay h1 span,
+#other a .picture .overlay h2 span,
+#other a .picture .overlay h3 span,
+#other a .picture .overlay h4 span,
+#other a .picture .overlay h5 span,
+#other a .picture .overlay h6 span
+{
+    width: 100%; 
+
+    text-align: center;
+}
+#other a .picture .overlay:hover
+{
+    background: rgba(0, 0, 0, .4);
+}
+
+#other img
+{
+    width: 100%;
+    min-height: 140px;
+    max-height: 140px;
+}
+
+footer
+{
+    position: relative;
+}
+footer .img-overlay
+{
+    position: absolute;
+    top: 0;
     left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: .1; 
+    background: url('../img/city1.jpeg');
+    background-attachment: fixed;
+    background-position-y: center;
+    background-size: cover;
 }
