@@ -567,7 +567,18 @@ li
 }
 .middle-right .content .card
 {
+    -webkit-transition: .3s transform cubic-bezier(0, .5, 1, 1);
+            transition: .3s transform cubic-bezier(0, .5, 1, 1); 
+
     color: var(--dark);
+}
+.middle-right .content .card:hover
+{
+    transform: scale(1.05);
+
+    -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, .75);
+       -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, .75);
+            box-shadow: 0 10px 6px -6px rgba(0, 0, 0, .75);
 }
 
 .middle-right .overlay
@@ -580,9 +591,6 @@ li
     height: 100%;
 
     content: '';
-    /*
-  background: var(--red);
-  opacity:0.7;*/
 
     background-color: rgba(220, 53, 69, .7);
 }
