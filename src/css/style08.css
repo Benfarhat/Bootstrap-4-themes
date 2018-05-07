@@ -63,7 +63,7 @@ a.btn.readmore-danger
   transition: all .5s ease 0s;
   transition: all 1s ease;
   color: var(--white);
-  background: linear-gradient(to left, transparent 50%, white 50%, transparent 100%);
+  background: linear-gradient(to left, transparent 50%, white 50%, white 99.76%, transparent 99.76%);
   background-position: right bottom;
   background-size: 240% 100%;
 }
@@ -71,7 +71,7 @@ a.btn.readmore-danger
 a.btn.readmore-danger:hover
 {
   color: var(--red);
-  background-position: left bottom;
+  background-position: -2px bottom;
 }
 
 /* For menu */
