@@ -100,6 +100,20 @@ gulp.task('bs-sass2', function(){
 });
 
 
+gulp.task('bs-sass3', function(){
+  return gulp.src([source + '/custom/scss/bootstrap3.scss', source + '/scss/*.scss'])
+  .pipe(sass())
+  .pipe(csscomb())
+  .pipe(cssbeautify({
+      indent: '  ',
+      openbrace: 'separate-line',
+      autosemicolon: true
+  }))
+  .pipe(gulp.dest(source + '/css'))
+  .pipe(browserSync.stream());
+});
+
+
 gulp.task('serve-root2', ['bs-sass2'], function() {
   browserSync.init({
     server: {
@@ -113,7 +127,22 @@ gulp.task('serve-root2', ['bs-sass2'], function() {
 
 })
 
+
+gulp.task('serve-root3', ['bs-sass3'], function() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    },
+  })
+
+  gulp.watch(source + '/scss/*.scss', ['bs-sass3']);
+  gulp.watch(source + '/custom/scss.1/*.scss', ['bs-sass3']);
+  gulp.watch('./**/*.html').on('change', browserSync.reload);
+
+})
+
 gulp.task('dev2', ['bs-js', 'serve-root2', 'fa-css', 'fa-fonts'])
+gulp.task('dev3', ['bs-js', 'serve-root3', 'fa-css', 'fa-fonts'])
 
 /* ============================================================= */
 
