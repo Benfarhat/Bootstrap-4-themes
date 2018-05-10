@@ -101,7 +101,7 @@ gulp.task('bs-sass2', function(){
 
 
 gulp.task('bs-sass3', function(){
-  return gulp.src([source + '/custom/scss/bootstrap3.scss', source + '/scss/*.scss'])
+  return gulp.src([source + '/custom/scss1/bootstrap3.scss', source + '/scss/*.scss'])
   .pipe(sass())
   .pipe(csscomb())
   .pipe(cssbeautify({
@@ -136,7 +136,7 @@ gulp.task('serve-root3', ['bs-sass3'], function() {
   })
 
   gulp.watch(source + '/scss/*.scss', ['bs-sass3']);
-  gulp.watch(source + '/custom/scss.1/*.scss', ['bs-sass3']);
+  gulp.watch(source + '/custom/scss1/*.scss', ['bs-sass3']);
   gulp.watch('./**/*.html').on('change', browserSync.reload);
 
 })

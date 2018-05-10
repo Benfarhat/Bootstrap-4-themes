@@ -1,0 +1,253 @@
+/* For debuggin a div just add "debug" class */
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Lato|Roboto');
+
+.debug
+{
+  position: relative;
+}
+
+.debug:after
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  min-width: 100%;
+  height: 100%;
+  content: '';
+  border: 1px dashed red;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+/* Font */
+.archivo
+{
+  font-family: 'Archivo Narrow', sans-serif !important;
+}
+
+.roboto
+{
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.lato
+{
+  font-family: 'Lato', sans-serif !important;
+}
+
+body
+{
+  font-family: 'Lato', sans-serif !important;
+  font-size: .9em;
+}
+
+/* Font size */
+.font80
+{
+  font-size: .8em;
+}
+
+.font85
+{
+  font-size: .85em;
+}
+
+.font90
+{
+  font-size: .9em;
+}
+
+.font95
+{
+  font-size: .95em;
+}
+
+.font100
+{
+  font-size: 1em;
+}
+
+/* General */
+.overlay
+{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Font size */
+.rgba1
+{
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.rgba2
+{
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.rgba3
+{
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.rgba4
+{
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.rgba5
+{
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.rgba6
+{
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.rgba7
+{
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.rgba8
+{
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.rgba9
+{
+  background-color: rgba(0, 0, 0, .9);
+}
+
+.flex-1
+{
+  flex: 1;
+}
+
+/* Menu-top */
+#menu-top .navbar-brand
+{
+  padding: inherit;
+}
+
+#menu-top .navbar-brand img
+{
+  top: -2px;
+}
+
+#menu-top a
+{
+  padding: 8px 16px;
+}
+
+#menu-top a.text-white,
+#menu-top .bg-primary > a,
+#menu-top .bg-secondary > a,
+#menu-top .bg-success > a,
+#menu-top .bg-info > a,
+#menu-top .bg-warning > a,
+#menu-top .bg-danger > a,
+#menu-top .bg-dark > a
+{
+  color: var(--white);
+}
+
+#menu-top .nav-item
+{
+  border-left: 1px solid rgba(0, 0, 0, .2);
+}
+
+#menu-top .nav-item .facebook:hover
+{
+  color: var(--white);
+  background-color: var(--info);
+}
+
+#menu-top .nav-item .twitter:hover
+{
+  color: var(--white);
+  background-color: var(--success);
+}
+
+#menu-top .nav-item .youtube:hover
+{
+  color: var(--white);
+  background-color: var(--danger);
+}
+
+#menu-top .dropdown-menu
+{
+  top: calc(100% - 2.2px);
+  border: none;
+}
+
+/* Header-top */
+#header-top
+{
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  min-height: 220px;
+  background: url(../img/hospital.jpeg);
+  background-position-y: center;
+}
+
+#header-top a
+{
+  color: #e5e5e5;
+}
+
+#header-top a:hover
+{
+  color: #fff;
+}
+
+#header-top nav .nav-link
+{
+  text-align: center;
+}
+
+#header-top nav .nav-link i.fa
+{
+  font-size: 2.4em;
+  display: block;
+}
+
+#header-top nav .nav-link:hover
+{
+  background-color: rgba(0, 0, 0, .6);
+}
+
+/* Menu */
+#menu
+{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#menu ul li
+{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#menu ul .dropdown-menu
+{
+  top: calc(100% - 2.2px);
+}
+
+#menu a.nav-link
+{
+  padding: 8px 24px;
+  color: #e5e5e5;
+}
+
+#menu a.nav-link:hover
+{
+  color: #fff;
+  background-color: var(--info);
+}
