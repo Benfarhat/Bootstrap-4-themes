@@ -1,5 +1,5 @@
 /* For debuggin a div just add "debug" class */
-@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Lato|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Archivo+Narrow|Lato|Roboto|Patua+One|Playfair+Display+SC|Spectral+SC|Tulpen+One');
 
 .debug
 {
@@ -20,24 +20,9 @@
 }
 
 /* Font */
-.archivo
-{
-  font-family: 'Archivo Narrow', sans-serif !important;
-}
-
-.roboto
-{
-  font-family: 'Roboto', sans-serif !important;
-}
-
-.lato
-{
-  font-family: 'Lato', sans-serif !important;
-}
-
 body
 {
-  font-family: 'Lato', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
   font-size: .9em;
 }
 
@@ -75,6 +60,38 @@ body
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.titre
+{
+  position: relative;
+  margin-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  border-bottom: 4px solid rgba(0, 0, 0, .1);
+  flex: 1;
+}
+
+.titre::before
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 1px;
+  content: '';
+  border-top: 1px solid var(--success);
+}
+
+.titre::after
+{
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 50%;
+  height: 1px;
+  content: '';
+  border-bottom: 4px solid var(--success);
 }
 
 /* Font size */
@@ -128,9 +145,28 @@ body
   flex: 1;
 }
 
+/* Drop-down item */
+.dropdown-menu
+{
+  color: var(--white);
+  background-color: var(--success);
+}
+
+.dropdown-menu a.dropdown-item
+{
+  color: var(--white);
+}
+
+.dropdown-menu a.dropdown-item:hover
+{
+  background-color: rgba(0, 0, 0, .3);
+}
+
 /* Menu-top */
 #menu-top .navbar-brand
 {
+  font-family: 'Oswald', sans-serif !important;
+  font-weight: 300;
   padding: inherit;
 }
 
@@ -188,12 +224,22 @@ body
 /* Header-top */
 #header-top
 {
+  font-family: 'Patua One', cursive;
   position: relative;
   display: flex;
   overflow: hidden;
   min-height: 220px;
-  background: url(../img/hospital.jpeg);
-  background-position-y: center;
+  background: url(../img/hospital3.jpeg);
+  background-position-y: 40%;
+  background-size: cover;
+}
+
+#header-top .title
+{
+  font-family: 'Patua One', cursive;
+  font-weight: 300;
+  color: #fff;
+  color: rgba(255, 255, 255, .9);
 }
 
 #header-top a
@@ -249,5 +295,129 @@ body
 #menu a.nav-link:hover
 {
   color: #fff;
-  background-color: var(--info);
+  background-color: var(--dark);
+}
+
+/* Slideshow section */
+#slideshow-section #carousel .carousel-indicators
+{
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: -18px;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+#slideshow-section #carousel .carousel-indicators li
+{
+  width: 12px;
+  height: 12px;
+  margin-bottom: 4px;
+  border: 1px solid var(--success);
+  border-radius: 0;
+  background-color: transparent;
+}
+
+#slideshow-section #carousel .carousel-indicators li.active
+{
+  background-color: var(--success);
+}
+
+#slideshow-section #carousel .carousel-control-prev,
+#slideshow-section #carousel .carousel-control-next
+{
+  font-size: 1.6em;
+  width: auto;
+  opacity: 1;
+  color: var(--success);
+}
+
+#slideshow-section #carousel .carousel-control-next-icon
+{
+  color: var(--success);
+}
+
+#slideshow-section #carousel .carousel-control-prev
+{
+  left: -48px;
+}
+
+#slideshow-section #carousel .carousel-control-next
+{
+  right: -48px;
+}
+
+#slideshow-section #carousel .carousel-item
+{
+  overflow: hidden;
+  max-height: 250px;
+}
+
+#slideshow-section #carousel .carousel-item img
+{
+  width: 50%;
+  max-width: 50%;
+  min-height: 250px;
+}
+
+#slideshow-section #carousel .carousel-item .carousel-caption
+{
+  top: 0;
+  right: auto;
+  bottom: bottom;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  padding: 8px 16px;
+  text-align: justify;
+  color: var(--dark);
+}
+
+#content-loop .card.bg-info,
+#content-loop .card.bg-secondary,
+#content-loop .card.bg-danger,
+#content-loop .card.bg-success,
+#content-loop .card.bg-info
+{
+  color: var(--white);
+}
+
+#content-loop .card.bg-info .card-title,
+#content-loop .card.bg-secondary .card-title,
+#content-loop .card.bg-danger .card-title,
+#content-loop .card.bg-success .card-title,
+#content-loop .card.bg-info .card-title
+{
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+
+#content-loop .card.bg-light
+{
+  color: var(--dark);
+}
+
+#content-loop .card.bg-light .card-title
+{
+  border-bottom: 1px solid rgba(0, 0, 0, .4);
+}
+
+#code-patient
+{
+  color: var(--white);
+  background: url(../../src/img/hfsi/parallax6.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+footer #footer-bottom a.nav-link
+{
+  color: var(--white);
+}
+
+footer #footer-bottom a.nav-link a:hover
+{
+  text-decoration: underline;
 }

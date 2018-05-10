@@ -13,24 +13,39 @@
     background-color:rgba(0,0,0,.4);
     border:1px dashed red;
   }
-  
-  
+
+
   /* Font */
-  @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Lato|Roboto');
-  
-  .archivo{
+  @import url('https://fonts.googleapis.com/css?family=Oswald|Archivo+Narrow|Lato|Roboto|Patua+One|Playfair+Display+SC|Spectral+SC|Tulpen+One');
+
+  @mixin oswald{
+    font-family: 'Oswald', sans-serif !important;
+  }
+  @mixin archivo{
     font-family: 'Archivo Narrow', sans-serif !important;
   }
-  
-  .roboto{
+  @mixin roboto{
     font-family: 'Roboto', sans-serif !important;
   }
-  .lato{
+  @mixin lato{
     font-family: 'Lato', sans-serif !important;
   }
+  @mixin tulpen{
+    font-family: 'Tulpen One', cursive;
+  }
+  @mixin patua{
+    font-family: 'Patua One', cursive;
+  }
+  @mixin playfair{
+    font-family: 'Playfair Display SC', serif;
+  }
+  @mixin spectral{
+    font-family: 'Spectral SC', serif;
+  }
+
 
   body{
-    font-family: 'Lato', sans-serif !important;
+    @include roboto;
     font-size:0.9em;
   }
 
@@ -41,7 +56,7 @@
     }
   }
 
-  
+
   /* General */
 
   .overlay{
@@ -52,16 +67,57 @@
     left:0;
   }
 
+  .titre{
+    flex:1;
+    border-bottom: 4px solid rgba(0,0,0,.1);
+    margin-bottom:16px;
+    position:relative;
+    padding-top:12px;
+    padding-bottom:8px;
+    &::before{
+      position:absolute;
+      top:0;
+      left:0;
+      content:'';
+      width: 10%;
+      height: 1px ;
+      border-top:1px solid var(--success);
+    }
+    &::after{
+      position:absolute;
+      bottom:-4px;
+      left:0;
+      content:'';
+      width: 50%;
+      height: 1px ;
+      border-bottom:4px solid var(--success);
+    }
+  }
+
+
   /* Font size */
   @for $i from 1 through 9{
     .rgba#{$i}{
       background-color: rgba(0,0,0,$i / 10);
     }
   }
-  
+
 
   .flex-1{
     flex:1;
+  }
+
+  /* Drop-down item */
+
+  .dropdown-menu{
+    background-color: var(--success);
+    color: var(--white);
+    a.dropdown-item {
+      color: var(--white);
+      &:hover{
+      background-color: rgba(0,0,0,.3);
+      }
+    }
   }
 
 
@@ -70,6 +126,8 @@
   #menu-top{
     .navbar-brand{
       padding:inherit;
+      @include oswald;
+      font-weight: 300;
       img{
         top:-2px;
       }
@@ -105,10 +163,19 @@
   #header-top{
     display:flex;
     position:relative;
-    background: url(../img/hospital.jpeg);
+    background: url(../img/hospital3.jpeg);
+    background-size:cover;
     min-height:220px;
-    background-position-y: center;
+    background-position-y: 40%;
     overflow: hidden;
+    @include patua;
+
+    .title{
+      @include patua;
+      font-weight: 300;
+      color:#fff;
+      color: rgba(255,255,255,.9);
+    }
 
     a{
       color:#e5e5e5;
@@ -130,7 +197,7 @@
     }
 
   }
-  
+
 
   /* Menu */
   #menu{
@@ -152,9 +219,116 @@
     }
     a.nav-link:hover{
       color:#fff;
-      background-color:var(--info);
+      background-color:var(--dark);
     }
-
-
   }
-  
+
+  /* Slideshow section */
+
+  #slideshow-section{
+
+    #carousel{
+      .carousel-indicators{
+        position:absolute;
+        left:-18px;
+        right:auto;
+        top:0;
+        bottom:auto;
+        margin-left:auto;
+        margin-right:auto;
+        cursor: pointer;
+        li{
+          width:12px;
+          height:12px;
+          border-radius:0%;
+          border:1px solid var(--success);
+          background-color: transparent;
+          margin-bottom:4px;
+        }
+        li.active{
+          background-color:var(--success);
+        }
+      }
+
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        opacity:1;
+        color: var(--success);
+        width:auto;
+        font-size:1.6em;
+      }
+        .carousel-control-next-icon{
+          color: var(--success);
+        }
+      .carousel-control-prev {
+        left: -48px;
+
+      }
+      .carousel-control-next {
+        right: -48px;
+      }
+
+
+
+      .carousel-item{
+        max-height: 250px;
+        overflow:hidden;
+        img{
+          max-width:50%;
+          width:50%;
+          min-height:250px;
+
+        }
+        .carousel-caption{
+          width:50%;
+          height:100%;
+          top:0;
+          left:50%;
+          right: auto;
+          bottom:bottom;
+          text-align:justify;
+          color:var(--dark);
+          padding: 8px 16px;
+
+
+        }
+      }
+    }
+  }
+
+  #content-loop{
+    .card.bg-info, .card.bg-secondary, .card.bg-danger, .card.bg-success, .card.bg-info{
+      color: var(--white);
+      .card-title{
+        border-bottom: 1px solid rgba(255,255,255,.4);
+      }
+    }
+    .card.bg-light{
+      color: var(--dark);
+      .card-title{
+        border-bottom: 1px solid rgba(0,0,0,.4);
+      }
+    }
+  }
+
+  #code-patient{
+    background: url(../../src/img/hfsi/parallax6.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color:var(--white);
+  }
+
+  footer{
+    #footer-top{
+
+    }
+    #footer-bottom{
+      a.nav-link{
+        color: var(--white);
+        a:hover{
+          text-decoration:underline;
+        }
+      }
+    }
+  }
