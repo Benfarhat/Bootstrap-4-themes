@@ -154,7 +154,7 @@
       }
     }
     .dropdown-menu{
-      top: calc(100% - 2.2px);
+      top: calc(100% - 2.1px);
       border: none;
     }
   }
@@ -228,6 +228,7 @@
   #slideshow-section{
 
     #carousel{
+      width:100%;
       .carousel-indicators{
         position:absolute;
         left:-18px;
@@ -258,9 +259,9 @@
         width:auto;
         font-size:1.6em;
       }
-        .carousel-control-next-icon{
-          color: var(--success);
-        }
+      .carousel-control-next-icon{
+        color: var(--success);
+      }
       .carousel-control-prev {
         left: -48px;
 
@@ -269,12 +270,11 @@
         right: -48px;
       }
 
-
-
       .carousel-item{
         max-height: 250px;
         overflow:hidden;
         img{
+          min-width:50%;
           max-width:50%;
           width:50%;
           min-height:250px;
@@ -317,6 +317,8 @@
     background-attachment: fixed;
     background-size: cover;
     color:var(--white);
+    padding-top:100px !important;
+    padding-bottom:100px !important;
   }
 
   footer{
